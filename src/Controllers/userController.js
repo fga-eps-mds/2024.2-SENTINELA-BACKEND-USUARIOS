@@ -1,4 +1,6 @@
 const User = require("../Models/userSchema");
+const jwt = require("jsonwebtoken");
+const { SECRET } = process.env;
 
 const bcrypt = require("bcryptjs");
 const {
@@ -174,6 +176,41 @@ const deleteUser = async (req, res) => {
     }
 };
 
+const update = async(req, res) => {
+    let userId;
+    
+    const token = req.headers.authorization?.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ message: 'Token não fornecido' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, SECRET);
+
+        userId = decoded.id;
+    } catch (err) {
+        return res.status(401).json({ message: 'Token inválido ou expirado' });
+    }
+
+    try {
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).send();
+        }
+        
+        Object.assign(user, req.body.updatedUser);
+
+        user.updatedAt = new Date();
+
+        await user.save();
+
+        res.status(200).send(user);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+}
+
 const recoverPassword = async (req, res) => {
     try {
         const { email } = req.body.data;
@@ -296,6 +333,7 @@ module.exports = {
     login,
     getUsers,
     getUserById,
+    update,
     deleteUser,
     patchUser,
     recoverPassword,
