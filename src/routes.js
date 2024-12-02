@@ -13,6 +13,7 @@ const OrganController = require("./Controllers/organController");
 // --user
 routes.get("/users", tokenValidation, UserController.getUsers);
 routes.get("/users/:id", tokenValidation, UserController.getUserById);
+routes.get("/user", tokenValidation, UserController.getLoggedUser);
 routes.patch("/users/patch/:id", tokenValidation, UserController.patchUser);
 routes.delete("/users/delete/:id", tokenValidation, UserController.deleteUser);
 routes.put("/user", tokenValidation, UserController.update);
