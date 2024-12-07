@@ -2,12 +2,12 @@ name: backend-usuarios-release
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     tags:
       - "v*"
   pull_request:
     branches:
-      - main
+      - master
       - devel
     types: [closed]
 
