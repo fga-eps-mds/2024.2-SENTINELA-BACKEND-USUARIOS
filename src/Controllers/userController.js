@@ -77,7 +77,10 @@ const login = async (req, res) => {
 
     try {
         if (typeof email == "string") {
-            const user = await User.findOne({ email: email, status: true });
+            const user = await User.findOne({ email: email,
+            //"Gamebiarra" Não deve ficar aqui no final
+            //status: true
+            });
 
             if (!user) {
                 return res
