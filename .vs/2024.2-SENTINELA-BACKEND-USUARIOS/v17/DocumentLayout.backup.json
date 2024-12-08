@@ -1,0 +1,274 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\initDatabase.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Utils\\initDatabase.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\userController.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Controllers\\userController.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\tokenController.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Controllers\\tokenController.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\roleController.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Controllers\\roleController.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\organController.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Controllers\\organController.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\membershipController.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Controllers\\membershipController.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\token.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Utils\\token.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\permissions.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Utils\\permissions.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\cpf.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Utils\\cpf.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\email.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Utils\\email.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\userSchema.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Models\\userSchema.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\membershipFormSchema.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Models\\membershipFormSchema.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\roleSchema.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Models\\roleSchema.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\tokenSchema.js||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Models\\tokenSchema.js||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\Template-Colection\\SENTINELA-COLETION.json||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Template-Colection\\SENTINELA-COLETION.json||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "tokenController.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\tokenController.js",
+              "RelativeDocumentMoniker": "src\\Controllers\\tokenController.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\tokenController.js",
+              "RelativeToolTip": "src\\Controllers\\tokenController.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-13T04:38:36.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "roleController.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\roleController.js",
+              "RelativeDocumentMoniker": "src\\Controllers\\roleController.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\roleController.js",
+              "RelativeToolTip": "src\\Controllers\\roleController.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-13T04:38:34.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "organController.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\organController.js",
+              "RelativeDocumentMoniker": "src\\Controllers\\organController.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\organController.js",
+              "RelativeToolTip": "src\\Controllers\\organController.js",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAFkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-13T04:38:11.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "initDatabase.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\initDatabase.js",
+              "RelativeDocumentMoniker": "src\\Utils\\initDatabase.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\initDatabase.js",
+              "RelativeToolTip": "src\\Utils\\initDatabase.js",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAUwIUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-05T17:57:10.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "cpf.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\cpf.js",
+              "RelativeDocumentMoniker": "src\\Utils\\cpf.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\cpf.js",
+              "RelativeToolTip": "src\\Utils\\cpf.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-13T04:37:46.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "email.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\email.js",
+              "RelativeDocumentMoniker": "src\\Utils\\email.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\email.js",
+              "RelativeToolTip": "src\\Utils\\email.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-13T04:36:24.071Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "membershipController.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\membershipController.js",
+              "RelativeDocumentMoniker": "src\\Controllers\\membershipController.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\membershipController.js",
+              "RelativeToolTip": "src\\Controllers\\membershipController.js",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-13T04:32:12.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "userController.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\userController.js",
+              "RelativeDocumentMoniker": "src\\Controllers\\userController.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Controllers\\userController.js",
+              "RelativeToolTip": "src\\Controllers\\userController.js",
+              "ViewState": "AgIAALQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-13T04:31:55.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "token.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\token.js",
+              "RelativeDocumentMoniker": "src\\Utils\\token.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\token.js",
+              "RelativeToolTip": "src\\Utils\\token.js",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-13T03:08:58.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "membershipFormSchema.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\membershipFormSchema.js",
+              "RelativeDocumentMoniker": "src\\Models\\membershipFormSchema.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\membershipFormSchema.js",
+              "RelativeToolTip": "src\\Models\\membershipFormSchema.js",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-13T03:08:51.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "roleSchema.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\roleSchema.js",
+              "RelativeDocumentMoniker": "src\\Models\\roleSchema.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\roleSchema.js",
+              "RelativeToolTip": "src\\Models\\roleSchema.js",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-13T03:00:16.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "userSchema.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\userSchema.js",
+              "RelativeDocumentMoniker": "src\\Models\\userSchema.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\userSchema.js",
+              "RelativeToolTip": "src\\Models\\userSchema.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-05T18:01:05.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "tokenSchema.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\tokenSchema.js",
+              "RelativeDocumentMoniker": "src\\Models\\tokenSchema.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Models\\tokenSchema.js",
+              "RelativeToolTip": "src\\Models\\tokenSchema.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-13T03:00:14.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "permissions.js",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\permissions.js",
+              "RelativeDocumentMoniker": "src\\Utils\\permissions.js",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\src\\Utils\\permissions.js",
+              "RelativeToolTip": "src\\Utils\\permissions.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-05T17:56:39.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SENTINELA-COLETION.json",
+              "DocumentMoniker": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\Template-Colection\\SENTINELA-COLETION.json",
+              "RelativeDocumentMoniker": "Template-Colection\\SENTINELA-COLETION.json",
+              "ToolTip": "C:\\MDS\\2024.2-SENTINELA-BACKEND-USUARIOS\\Template-Colection\\SENTINELA-COLETION.json",
+              "RelativeToolTip": "Template-Colection\\SENTINELA-COLETION.json",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAAABEAAACbAgAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-13T02:57:09.191Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
