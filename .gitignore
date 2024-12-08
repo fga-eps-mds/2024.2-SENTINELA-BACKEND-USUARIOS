@@ -8,7 +8,7 @@ yarn-error.log
 package-lock.json
 
 # Arquivos de ambiente
-# .env
+.env
 
 # Arquivos de build
 /build
@@ -18,3 +18,4 @@ package-lock.json
 .idea
 .vscode
 .env
+.vs/
