@@ -124,6 +124,54 @@ const getUserById = async (req, res) => {
     }
 };
 
+const getLoggedUserId = async (req, res) => {
+    const token = req.headers.authorization?.split(" ")[1];
+
+    if (!token) {
+        return res.status(401).json({ message: "Token não fornecido" });
+    }
+
+    try {
+        const decoded = jwt.verify(token, SECRET);
+
+        userId = decoded.id;
+    } catch (err) {
+        console.log(err);
+        return res.status(401).json({ message: "Token inválido ou expirado" });
+    }
+    return userId;
+};
+
+const getLoggedUser = async (req, res) => {
+    //let userId = await this.getLoggedUserId(req,res);
+
+    const token = req.headers.authorization?.split(" ")[1];
+
+    if (!token) {
+        return res.status(401).json({ message: "Token não fornecido" });
+    }
+
+    try {
+        const decoded = jwt.verify(token, SECRET);
+
+        userId = decoded.id;
+    } catch (err) {
+        console.log(err);
+
+        return res.status(401).json({ message: "Token inválido ou expirado" });
+    }
+
+    try {
+        const user = await User.findById(userId).populate("role");
+        if (!user) {
+            return res.status(404).send();
+        }
+        res.status(200).send(user);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+};
+
 const patchUser = async (req, res) => {
     const userId = req.params.id;
 
@@ -178,6 +226,7 @@ const deleteUser = async (req, res) => {
 
 const update = async (req, res) => {
     let userId;
+
     const token = req.headers.authorization?.split(" ")[1];
 
     if (!token) {
@@ -188,8 +237,9 @@ const update = async (req, res) => {
         const decoded = jwt.verify(token, SECRET);
 
         userId = decoded.id;
-        // eslint-disable-next-line no-unused-vars
     } catch (err) {
+        console.log(err);
+
         return res.status(401).json({ message: "Token inválido ou expirado" });
     }
 
@@ -295,7 +345,8 @@ const changePassword = async (req, res) => {
 
 const changePasswordInProfile = async (req, res) => {
     const { old_password, new_password } = req.body;
-    const userId = req.params.id;
+
+    const userId = await getLoggedUserId(req, res);
 
     try {
         const user = await User.findById(userId);
@@ -303,14 +354,6 @@ const changePasswordInProfile = async (req, res) => {
         if (!user) {
             return res.status(404).send();
         }
-
-        if (userId !== req.userId) {
-            return res.status(403).json({
-                mensagem:
-                    "O token fornecido não tem permissão para finalizar a operação",
-            });
-        }
-
         if (!bcrypt.compareSync(old_password, user.password)) {
             return res.status(401).json({
                 mensagem: "Senha atual incorreta.",
@@ -324,7 +367,7 @@ const changePasswordInProfile = async (req, res) => {
             mensagem: "senha alterada com sucesso.",
         });
     } catch (error) {
-        return res.status(500).send(error);
+        return res.status(500).send({ myerror: error });
     }
 };
 const teste = async (req, res) => {
@@ -345,6 +388,7 @@ module.exports = {
     getUsers,
     getUserById,
     update,
+    getLoggedUser,
     deleteUser,
     patchUser,
     recoverPassword,
