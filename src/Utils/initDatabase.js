@@ -138,10 +138,7 @@ const initializeRoles = async () => {
                 email: emailUser,
             });
             if (!ExistingSindicalizado) {
-                const hashedPassword = await bcrypt.hash(
-                    senhaUser,
-                    saltRounds
-                );
+                const hashedPassword = await bcrypt.hash(senhaUser, saltRounds);
 
                 const sindUser = new User({
                     name: "User",
