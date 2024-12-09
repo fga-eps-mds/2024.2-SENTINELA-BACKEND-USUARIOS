@@ -17,6 +17,13 @@ const User = require("../Models/userSchema");
 const bcrypt = require("bcryptjs");
 const saltRounds = 13;
 
+const senhaAdmin = process.env.Admin_senha;
+const emailAdmin = process.env.Admin_email;
+const celularAdmin = process.env.Admin_celular;
+const senhaUser = process.env.User_senha;
+const emailUser = process.env.User_email;
+const celularUser = process.env.User_celular;
+
 const initializeRoles = async () => {
     const roles = [
         {
@@ -103,18 +110,18 @@ const initializeRoles = async () => {
             }
 
             const existingAdmin = await User.findOne({
-                email: process.env.Admin_email,
+                email: emailAdmin,
             });
             if (!existingAdmin) {
                 const hashedPassword = await bcrypt.hash(
-                    process.env.Admin_senha,
+                    senhaAdmin,
                     saltRounds
                 );
 
                 const adminUser = new User({
                     name: "Admin",
-                    email: process.env.Admin_email,
-                    phone: process.env.Admin_celular,
+                    email: emailAdmin,
+                    phone: celularAdmin,
                     status: true,
                     password: hashedPassword,
                     role: adminRole._id,
@@ -128,18 +135,18 @@ const initializeRoles = async () => {
             }
 
             const ExistingSindicalizado = await User.findOne({
-                email: process.env.User_email,
+                email: emailUser,
             });
             if (!ExistingSindicalizado) {
                 const hashedPassword = await bcrypt.hash(
-                    process.env.User_senha,
+                    senhaUser,
                     saltRounds
                 );
 
                 const sindUser = new User({
                     name: "User",
-                    email: process.env.User_email,
-                    phone: process.env.User_celular,
+                    email: emailUser,
+                    phone: celularUser,
                     status: true,
                     password: hashedPassword,
                     role: userRole,
