@@ -8,7 +8,6 @@
     User_senha=
 ######################################################################################
 Altere os dados de forma que melhor desejar para iniciar o banco de dados com um usuário comum e um usuario Administrador.
-Lembre-se de rodar o comando <npm install dotenv> para poder adicionar as variáveis com o arquivo env
 */
 
 // ./utils/initRoles.js
