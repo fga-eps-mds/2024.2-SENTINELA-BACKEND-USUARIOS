@@ -39,6 +39,8 @@ routes.post("/login", UserController.login);
 routes.post("/users/recover-password", UserController.recoverPassword);
 routes.post("/verify-token", TokenController.getToken);
 routes.patch("/users/change-password/:id", UserController.changePassword);
+routes.patch("/users/renew-password", UserController.changePasswordInProfile);
+
 //
 routes.post("/membership/create", MembershipForm.createMembershipForm);
 routes.get("/membership", MembershipForm.getMembershipForm);

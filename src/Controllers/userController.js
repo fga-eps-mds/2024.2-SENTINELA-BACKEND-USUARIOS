@@ -124,9 +124,8 @@ const getUserById = async (req, res) => {
     }
 };
 
-const getLoggedUser = async (req, res) => {
-    let userId;
-    
+
+const getLoggedUserId = async (req, res) => {
     const token = req.headers.authorization?.split(' ')[1];
 
     if (!token) {
@@ -140,6 +139,12 @@ const getLoggedUser = async (req, res) => {
     } catch (err) {
         return res.status(401).json({ message: 'Token inválido ou expirado' });
     }
+    return userId; 
+}
+
+const getLoggedUser = async (req, res) => {
+   
+    let userId = await this.getLoggedUserId(req,res);
     
     try {
         const user = await User.findById(userId).populate("role");
@@ -323,20 +328,14 @@ const changePassword = async (req, res) => {
 
 const changePasswordInProfile = async (req, res) => {
     const { old_password, new_password } = req.body;
-    const userId = req.params.id;
+
+    const userId = await getLoggedUserId(req,res); 
 
     try {
         const user = await User.findById(userId);
 
         if (!user) {
             return res.status(404).send();
-        }
-
-        if (userId !== req.userId) {
-            return res.status(403).json({
-                mensagem:
-                    "O token fornecido não tem permissão para finalizar a operação",
-            });
         }
 
         if (!bcrypt.compareSync(old_password, user.password)) {
