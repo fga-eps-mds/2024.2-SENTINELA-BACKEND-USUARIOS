@@ -144,7 +144,21 @@ const getLoggedUserId = async (req, res) => {
 
 const getLoggedUser = async (req, res) => {
    
-    let userId = await this.getLoggedUserId(req,res);
+    //let userId = await this.getLoggedUserId(req,res);
+
+    const token = req.headers.authorization?.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ message: 'Token não fornecido' });
+    }
+
+    try {
+        const decoded = jwt.verify(token, SECRET);
+
+        userId = decoded.id;
+    } catch (err) {
+        return res.status(401).json({ message: 'Token inválido ou expirado' });
+    }
     
     try {
         const user = await User.findById(userId).populate("role");
