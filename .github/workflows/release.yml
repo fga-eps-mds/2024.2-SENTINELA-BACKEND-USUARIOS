@@ -2,12 +2,12 @@ name: backend-usuarios-release
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     tags:
       - "v*"
   pull_request:
     branches:
-      - main
+      - master
       - devel
     types: [closed]
 
@@ -36,7 +36,7 @@ jobs:
               run: |
                   git config --global user.email "${{ secrets.GIT_EMAIL }}"
                   git config --global user.name "${{ secrets.GIT_USER }}"
-                  git clone --single-branch --branch main "https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/fga-eps-mds/2024.1-SENTINELA-DOC" doc
+                  git clone --single-branch --branch main "https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/fga-eps-mds/2024.2-SENTINELA-DOC" doc
                   mkdir -p doc/analytics-raw-data
                   cp -R fga-eps-mds*.json doc/analytics-raw-data
                   cd doc
