@@ -4,7 +4,7 @@ const generator = require("generate-password");
 const bcrypt = require("bcryptjs");
 const Token = require("../Models/tokenSchema");
 const { generateRecoveryPasswordToken } = require("../Utils/token");
-const salt = bcrypt.genSaltSync();
+const saltRounds = 13;
 const Role = require("../Models/roleSchema");
 
 const createMembershipForm = async (req, res) => {
