@@ -1,0 +1,1507 @@
+[33mcommit dbe5170550490828a870c2ce93d185bc1cf3a76b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: MegahNevel <megahnevel@gmail.com>
+Date:   Mon Dec 9 19:15:06 2024 -0300
+
+    refactor
+
+[33mcommit b4252f67cfd14e52cdc09f23e458f6e67c91fdbf[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Guilherme Peixoto <48967037+guipeeix7@users.noreply.github.com>
+Date:   Mon Dec 9 22:46:51 2024 -0300
+
+    temp changes to create email
+
+[33mcommit af6428cc91159bf5d4272c431e724cd1d623ddc3[m
+Merge: 2fcd726 d8c5c66
+Author: Guilherme Peixoto <48967037+guipeeix7@users.noreply.github.com>
+Date:   Mon Dec 9 05:15:30 2024 -0300
+
+    Merge pull request #7 from fga-eps-mds/feat_update
+    
+    user can change password
+
+[33mcommit d8c5c66c5f6cff4f042626b0ee6ba9977ccf895e[m[33m ([m[1;31morigin/feat_update[m[33m)[m
+Merge: b42e499 2fcd726
+Author: Guilherme Peixoto <guizinpeix7@gmail.com>
+Date:   Mon Dec 9 05:10:46 2024 -0300
+
+    Merge branch 'master' of github.com:fga-eps-mds/2024.2-SENTINELA-BACKEND-USUARIOS into feat_update
+
+[33mcommit b42e4996fdbdf145943ca923c6a34207ef7edf73[m
+Author: Guilherme Peixoto <guizinpeix7@gmail.com>
+Date:   Mon Dec 9 04:43:34 2024 -0300
+
+    eslint config
+
+[33mcommit fc99e15a13e3098938eac1a25b6902cd7b43f891[m
+Merge: 17543f9 5eec828
+Author: Guilherme Peixoto <guizinpeix7@gmail.com>
+Date:   Mon Dec 9 04:34:03 2024 -0300
+
+    user can change pass
+
+[33mcommit 5eec8288fe045af90b5ad5c1116ebc36ed2a8c50[m
+Author: Guilherme Moura <guilherme.wt14@gmail.com>
+Date:   Sun Dec 8 23:21:58 2024 -0300
+
+    teste de usuario
+
+[33mcommit 9911f656c6dfd897d436a73ba14d52c3a8b55403[m
+Author: redjsun <yzabellamiranda4@gmail.com>
+Date:   Sun Dec 8 23:01:42 2024 -0300
+
+    [feat:1] update by logged user
+
+[33mcommit 2fcd726a3cff215becda94859bb313d29582d333[m[33m ([m[1;31morigin/fix-conflicts-r1[m[33m)[m
+Author: MegahNevel <megahnevel@gmail.com>
+Date:   Sun Dec 8 13:19:09 2024 -0300
+
+    remove dados pessoais do código e coloca-o em variáveis de ambiente
+
+[33mcommit f23d186ac851464919c6be3a5fee5228cbffccd7[m
+Merge: 42ad880 d8e77cc
+Author: Guilherme Peixoto <48967037+guipeeix7@users.noreply.github.com>
+Date:   Fri Dec 6 21:37:40 2024 -0300
+
+    Merge pull request #6 from fga-eps-mds/generate-sonar-metrics
+    
+    changed release.yml
+
+[33mcommit d8e77ccdc127df147ae543dec3fb7f9b00d43f72[m[33m ([m[1;31morigin/generate-sonar-metrics[m[33m)[m
+Author: Guilherme Peixoto <guizinpeix7@gmail.com>
+Date:   Fri Dec 6 21:32:37 2024 -0300
+
+    changed release.yml
+
+[33mcommit 42ad88064ac4c4450b6d07b9f50752d3ddac8dec[m
+Merge: 65a21a1 20cb8c4
+Author: Guilherme Peixoto <48967037+guipeeix7@users.noreply.github.com>
+Date:   Fri Dec 6 21:19:32 2024 -0300
+
+    Merge pull request #5 from fga-eps-mds/generate-sonar-metrics
+    
+    changed organization name
+
+[33mcommit 20cb8c4bc6a93a8e91b446a1bcf61a8eee4efc47[m[33m ([m[1;33mtag: [m[1;33mv1.0.0[m[33m)[m
+Author: Guilherme Peixoto <guizinpeix7@gmail.com>
+Date:   Fri Dec 6 21:17:39 2024 -0300
+
+    changed organization name again
+
+[33mcommit ed06e0669b97752d247ae2a93b2735145a182551[m
+Author: Guilherme Peixoto <guizinpeix7@gmail.com>
+Date:   Fri Dec 6 21:13:01 2024 -0300
+
+    changed organization name
+
+[33mcommit 65a21a1e9132ee59ead98ad1babe60536e326cc9[m
+Merge: 17543f9 4b2ee90
+Author: Guilherme Peixoto <48967037+guipeeix7@users.noreply.github.com>
+Date:   Fri Dec 6 19:36:51 2024 -0300
+
+    Merge pull request #4 from fga-eps-mds/generate-sonar-metrics
+    
+    fix release repository
+
+[33mcommit 4b2ee908b1c1f9a49cae2bfd3111d95957314c52[m
+Author: Guilherme Peixoto <guizinpeix7@gmail.com>
+Date:   Fri Dec 6 19:32:14 2024 -0300
+
+    fix release repository
+
+[33mcommit 17543f987961dda8745d5f45057fbc45bcb7116f[m[33m ([m[1;31morigin/devel[m[33m)[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Fri Dec 6 16:01:00 2024 -0300
+
+    fix: ajusta arquivo de cobertura
+
+[33mcommit b4cba7f74f3cc51b00093b5576e2b1562a3f489c[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Fri Dec 6 13:19:57 2024 -0300
+
+    fix: arquivo de cobertura
+
+[33mcommit 3ac2a970f38774a544003d789a4be086b5bfd24e[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Fri Dec 6 12:15:19 2024 -0300
+
+    fix: novas configurações do sonarcloud
+
+[33mcommit 31b30d63fdeddfe1991738153b6b0dc4ede2fe7e[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Fri Dec 6 11:15:21 2024 -0300
+
+    fix: ci testes
+
+[33mcommit ec22bda13d9629d583d6de0e5ea5b83e7333cad5[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Fri Dec 6 11:08:28 2024 -0300
+
+    fix: prettier e lint
+
+[33mcommit 442491294137c910d10ad562a766f30208383a3e[m
+Author: daniso0412 <180015222@aluno.unb.br>
+Date:   Tue Dec 3 15:35:58 2024 -0300
+
+    fix: Corrigindo conflitos
+
+[33mcommit 6c876959159fc17ab3072750f54720dd7f73ffb9[m
+Merge: c828144 2125dc2
+Author: daniso0412 <180015222@aluno.unb.br>
+Date:   Mon Dec 2 18:52:38 2024 -0300
+
+    Feature:US1 - Ciação de rota de sindicato
+    Co-authored-by: Mariana <martins.mariana2013@gmail.com>
+    Co-authored-by: Igor <igor.veras.daniel@gmail.com>
+    Co-authored-by: Dannyeclisson  <dannyeclisson@gmail.com>
+
+[33mcommit c8281440f1dd10ec40b7242c893ebbd4a95b6d40[m
+Author: daniso0412 <180015222@aluno.unb.br>
+Date:   Mon Dec 2 18:48:35 2024 -0300
+
+    Feature:US1 - Ciação de rota de sindicato
+    Co-authored-by: Mariana <martins.mariana2013@gmail.com>
+    Co-authored-by: Igor <igor.veras.daniel@gmail.com>
+    Co-authored-by: Dannyeclisson  <dannyeclisson@gmail.com>
+
+[33mcommit 60335d3a39b78a93855c587504de33e4914cdec8[m
+Author: Guilherme Moura <guilherme.wt14@gmail.com>
+Date:   Mon Dec 2 18:23:20 2024 -0300
+
+    [feat:1] udpate by logged user
+
+[33mcommit 2125dc2b78880eae6e6de5b1dc191f67d6d7e254[m
+Author: redjsun <yzabellamiranda4@gmail.com>
+Date:   Mon Dec 2 17:20:59 2024 -0300
+
+    [feat:1] update by logged user
+
+[33mcommit 8ae4b79d5ea75e7e1a57a36b56396848ec0992f7[m
+Author: redjsun <yzabellamiranda4@gmail.com>
+Date:   Mon Dec 2 17:20:59 2024 -0300
+
+    [feat:1] update by logged user
+
+[33mcommit 98c50b6da7784893b93f64dffdc32a8eec6f8b48[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Mon Nov 25 19:46:19 2024 -0300
+
+    Revert Ajusta Metricas e Testes
+    
+    This reverts commit 852649abc6e6020fd64ddbdf4f8098656ecd62c3.
+
+[33mcommit 852649abc6e6020fd64ddbdf4f8098656ecd62c3[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Mon Nov 25 19:44:09 2024 -0300
+
+    Ajusta Metricas e Testes
+
+[33mcommit 4b13570cd2531ba9e5f70b905a0e02e0780e7ca2[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Mon Nov 25 19:36:47 2024 -0300
+
+    Ajusta CI SonarCloud
+
+[33mcommit 09ab81bcf0f4086752e07ff5d99b82db4fc23d92[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Mon Nov 25 19:33:05 2024 -0300
+
+    Fix testes
+
+[33mcommit ae707d85a62f99efac781d626df8b0757f6691cb[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Mon Nov 25 19:30:40 2024 -0300
+
+    Ajusta ci.yml
+
+[33mcommit 8706bae215575d9c2e94cdf77033d35e0ec19c80[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Mon Nov 25 19:21:43 2024 -0300
+
+    Ajusta CI
+
+[33mcommit 7c439e43f95214f3fbb3befcee47da4ec3f12ca5[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Mon Nov 25 19:19:38 2024 -0300
+
+    Teste de CI
+
+[33mcommit fd5e25d5b7b2a4f5cf8abfa03b15b0c9edfc1353[m
+Author: Clara Ribeiro <clara.marcelino@descomplica.com.br>
+Date:   Mon Nov 25 19:17:50 2024 -0300
+
+    [chore:45] - Atualiza arquivo do sonarcloud
+
+[33mcommit aea9451cefc23dfd5bf061c363da77e366ac6cff[m
+Merge: 7c407f1 265a49b
+Author: Ingrid Carvalho <69825746+ingridSCarvalho@users.noreply.github.com>
+Date:   Sat Sep 7 21:54:59 2024 -0300
+
+    Merge pull request #33 from fga-eps-mds/33-attribute
+    
+    33 attribute -- Ready
+
+[33mcommit 265a49bf1dd631558af88affe7dd53aba37a0086[m
+Author: João Victor de Carvalho Nobre <65377921+Gam13@users.noreply.github.com>
+Date:   Sat Sep 7 18:33:39 2024 -0300
+
+    Lint fix on UserControler
+
+[33mcommit 1e4dd32fe9179c410e1d1b93a76eae451706d6a5[m
+Author: Davi Nobre <101183717+Jagaima@users.noreply.github.com>
+Date:   Sat Sep 7 18:31:37 2024 -0300
+
+    lint fix on routes
+
+[33mcommit f485237e018c0e7257285c6035f93b5b9197b67e[m
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Sat Sep 7 17:42:45 2024 -0300
+
+    [test 33] role protection test
+
+[33mcommit 65027dfe2e8c720f7f85eb4fad2600e4768dcd00[m
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Sat Sep 7 17:30:46 2024 -0300
+
+    [test 33] userController tests fixed
+
+[33mcommit 62f924a4c9b5f727807423b238ec5fed5580b5a0[m
+Merge: eb10c9c 7c407f1
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Sat Sep 7 16:48:15 2024 -0300
+
+    Merge remote-tracking branch 'origin/devel' into 33-attribute
+
+[33mcommit 7c407f13e499d7fbd24d3b57fb58d456c1e2abf6[m
+Merge: 993271b 995ecb3
+Author: Sara Campos <48694180+saracampss@users.noreply.github.com>
+Date:   Fri Sep 6 17:30:09 2024 -0300
+
+    Merge pull request #32 from fga-eps-mds/FIX-SECURITY-VULNERABILITIES
+    
+    Fixing multiple security vulnerabilities
+
+[33mcommit 993271b3577ee6caa93f2ea9941b5a90a97be7bb[m
+Merge: b6fcc73 81f1655
+Author: Sara Campos <48694180+saracampss@users.noreply.github.com>
+Date:   Fri Sep 6 17:23:03 2024 -0300
+
+    Merge pull request #24 from fga-eps-mds/52-tests-membership
+    
+    52-Tests-Membership
+
+[33mcommit 81f1655d5db2bcd59ef7e1e8674c5283dcd40a8b[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Fri Sep 6 11:37:40 2024 -0300
+
+    [tests:52] Adicionando coverage nos caminho de falha - Role
+
+[33mcommit d14435ae17b2e35c7858d565e0f50236d5cbb631[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Fri Sep 6 11:36:53 2024 -0300
+
+    [tests:52] Adicionando coverage nos caminho de falha
+
+[33mcommit eb10c9c237a558533d3f7645e5032455ba9ad166[m
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Fri Sep 6 01:34:34 2024 -0300
+
+    [fix 33] user protection fix
+
+[33mcommit 6a73b1890b35491cd22e345df7baf480a44bc2e8[m
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Fri Sep 6 01:02:37 2024 -0300
+
+    [fix 33] default role fixed
+
+[33mcommit cfab4d4fdf6b5644c4f0fa947c87076beb0680c3[m
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Fri Sep 6 00:32:59 2024 -0300
+
+    [feat 33] default users can't be deleted
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+
+[33mcommit 06f3c07dac26babcd5287327eeb3dcb182fdd102[m
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Fri Sep 6 00:27:15 2024 -0300
+
+    [fix 33] default roles can't be deleted
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+
+[33mcommit 491c37e976bdb96bac4f8222d19d72ab65344e90[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Thu Sep 5 23:24:59 2024 -0300
+
+    [tests] Removendo teste falho
+
+[33mcommit 52660510cc03413011211da1c468b1703e638d0c[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Thu Sep 5 23:21:04 2024 -0300
+
+    [tests] Adicionando testes de Roles
+
+[33mcommit 1f96e4f261794244df4dd69b9701f0db62f293c5[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Thu Sep 5 22:35:03 2024 -0300
+
+    [fix] Removendo controller depreciada
+
+[33mcommit 879b5ec730915917680ce70cf92641666c986101[m
+Merge: bc9ceba b6fcc73
+Author: Álvaro Gouvea <44756822+AlGouvea@users.noreply.github.com>
+Date:   Thu Sep 5 22:26:49 2024 -0300
+
+    Merge branch 'devel' into 52-tests-membership
+
+[33mcommit bc9cebafb4ff4342f70f75c6e52eb89688916487[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Thu Sep 5 22:29:20 2024 -0300
+
+    [tests:52] Aumentando coverage
+
+[33mcommit b6fcc735581271d57d8837f4259beacb68dde7dc[m
+Merge: bdb62ea 49a3bce
+Author: Álvaro Gouvea <44756822+AlGouvea@users.noreply.github.com>
+Date:   Thu Sep 5 21:06:13 2024 -0300
+
+    Merge pull request #37 from fga-eps-mds/hotfix-deply-domain
+    
+    [fix] - update membership domain fix.
+
+[33mcommit 49a3bce5e6b70072a64c4e7f107cae427e0e2b14[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu Sep 5 21:04:09 2024 -0300
+
+    [fix] - update membership domain fix.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit bdb62ea2fc2ff83e1df649e0d79fd32cd172ff57[m
+Merge: 406495e 9b7876c
+Author: Álvaro Gouvea <44756822+AlGouvea@users.noreply.github.com>
+Date:   Thu Sep 5 20:54:52 2024 -0300
+
+    Merge pull request #36 from fga-eps-mds/hotfix-deply-domain
+    
+    [fix] - add env DOMINIO
+
+[33mcommit 9b7876c06e13302466e68efd5f897a64005f9161[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu Sep 5 20:51:17 2024 -0300
+
+    [fix] - add env DOMINIO
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit a04e3c5f0e23f485ca022bb151b639d025f9766c[m
+Merge: b2913b1 6d74bbe
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Thu Sep 5 20:44:56 2024 -0300
+
+    Merge branch 'devel' into 33-attribute
+
+[33mcommit 406495e44193036e2dab4f927d9f4dd1700c2c2e[m
+Merge: 6d74bbe 00a5d07
+Author: Álvaro Gouvea <44756822+AlGouvea@users.noreply.github.com>
+Date:   Thu Sep 5 20:38:33 2024 -0300
+
+    Merge pull request #35 from fga-eps-mds/hotfix-email-env
+    
+    Hotfix email env
+
+[33mcommit 00a5d075eb67ddc852cf2f0ac6a03f9e8c614028[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu Sep 5 20:36:00 2024 -0300
+
+    [fix] - edit email function.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 1ad2f0605098f9438d2888a77e6f11a2ebfea9dd[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu Sep 5 20:34:39 2024 -0300
+
+    [fix] - edit env sample.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit c44bf4b19055b7c8cbc7bd884fd4fb37755fa780[m
+Merge: d8fbbd1 6d74bbe
+Author: Álvaro Gouvea <44756822+AlGouvea@users.noreply.github.com>
+Date:   Thu Sep 5 19:19:02 2024 -0300
+
+    Merge branch 'devel' into 52-tests-membership
+
+[33mcommit b2913b18881a7ac89fcae4414925dda78372bc17[m
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Tue Sep 3 22:29:16 2024 -0300
+
+    [fix 33] working on update user role for a default role if dont have any
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+
+[33mcommit f6d045ced5513ed44938a5a449bcf383530b3184[m
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Tue Sep 3 21:23:52 2024 -0300
+
+    [feat 33] implementing autodefault role for new users who don't have any role (not tested yet)
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+
+[33mcommit 9f343a9e9960b7ca2cf271c9c702a451b9d09f82[m
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Tue Sep 3 20:50:24 2024 -0300
+
+    [feat 33] role schema autoupdate users if the role  they have is removed
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+
+[33mcommit 992c82947bff27b15354114e1bd533bf25adef27[m
+Author: Gam13 <joaovictorgam13@gmail.com>
+Date:   Tue Sep 3 20:41:50 2024 -0300
+
+    [Fix 33] removing hardcoded users
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+
+[33mcommit 8695c20683226bf80f50f5f56fc56ea635914abc[m
+Author: Diogo-Barboza <diogorodriguesbb@gmail.com>
+Date:   Tue Sep 3 10:01:46 2024 -0300
+
+    [feat:33] Add role user when init database
+    
+    Co-authored-by: Gam13 <joaovictorgam13@gmail.com>
+
+[33mcommit 5e57bcfeecc7214814933337e155611a853d66b1[m
+Author: Diogo-Barboza <diogorodriguesbb@gmail.com>
+Date:   Mon Sep 2 18:55:37 2024 -0300
+
+    [feat:33] add check permission on users routes
+    
+    Co-authored-by: Gam13 <joaovictorgam13@gmail.com>
+
+[33mcommit 995ecb3f9ae9e294aae2ccb5cf9a0d9c3dedb968[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Mon Sep 2 18:02:47 2024 -0300
+
+    [fix] Adicionando verificação antes de deleção de Token
+
+[33mcommit d937a973daf9a617e42aac99a0b0397bf93e165b[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Mon Sep 2 17:57:42 2024 -0300
+
+    [fix] Corrigindo problema no userController
+
+[33mcommit 70e13946466de7e76ddb6f63d8192551bafb94a1[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Mon Sep 2 17:22:25 2024 -0300
+
+    [fix] Corrigindo problemas no organController
+
+[33mcommit ae6a3359d74d30e7099f1e46c6217e9ed65f44bc[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Mon Sep 2 17:18:00 2024 -0300
+
+    [fix] Corrigindo vulnerabilidade do cors
+
+[33mcommit 6d74bbe1763c4450afa47facf061340cc9925342[m
+Merge: b618cde 3739cd6
+Author: Álvaro Gouvea <44756822+AlGouvea@users.noreply.github.com>
+Date:   Sun Sep 1 12:48:02 2024 -0300
+
+    Merge pull request #30 from fga-eps-mds/fix-user-discriminator
+    
+    Fix user discriminator
+
+[33mcommit 3739cd6bddb19793c1d411d5ef9b51ab02b95a8a[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Fri Aug 30 21:49:23 2024 -0300
+
+    [fix] - remove console.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 1887a0295c51a3cd411b881cea209bb04461e0b4[m
+Author: Diogo-Barboza <diogorodriguesbb@gmail.com>
+Date:   Fri Aug 30 20:21:07 2024 -0300
+
+    [feat:33]  add checkPermission on getUser
+    
+    Co-authored-by: Gam13 <joaovictorgam13@gmail.com>
+
+[33mcommit b618cde8e6d1ba57629b62f8dcb77db0b7f3ace2[m
+Merge: 9e48477 c18420a
+Author: Ingrid Carvalho <69825746+ingridSCarvalho@users.noreply.github.com>
+Date:   Thu Aug 29 00:24:09 2024 -0300
+
+    Merge pull request #31 from fga-eps-mds/99-organ-registration
+    
+    99 organ registration
+
+[33mcommit c18420a676007a05e571ced55cb8817cd8cdef66[m
+Merge: 7da1c72 9e48477
+Author: ingridSCarvalho <ingridCarvalhoisc30@gmail.com>
+Date:   Wed Aug 28 21:20:05 2024 -0300
+
+    Merge branch 'devel' into 99-organ-registration
+
+[33mcommit 7da1c727c602c53aea5c0d7985b131e58fbf3539[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Mon Aug 26 16:31:28 2024 -0300
+
+    [test-99] - test of organController of 500 error
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 0738bde713c74212a89e860cefd68d69280f6eda[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Mon Aug 26 16:16:14 2024 -0300
+
+    [test-99] - test of organController of 500 error
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 9f0b31c216db554adb2b2430e89de3a71877ca1c[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Mon Aug 26 16:13:34 2024 -0300
+
+    [test-99] - test of organController of 500 error
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 961795ed46b99197b63f922f29126c56c7979657[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Mon Aug 26 15:35:27 2024 -0300
+
+    [test-99] - test of organController
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 0b263d32e3971568ed3ac69ea7dc914397d3dd03[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Mon Aug 26 12:30:07 2024 -0300
+
+    [fix-99] - Verifica nome já cadastrado no banco
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 9b9f4f788371d382a24904fb9a507a4b949d448d[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Sat Aug 24 02:55:18 2024 -0300
+
+    [fix:34] - user and filied user inherance.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 474f4bca77198082c3bc1e241f857170d37e0427[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Sat Aug 24 02:54:47 2024 -0300
+
+    [fix:34] - user and filied user inherance.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 9e484776cb831bbd9bee1d92ed82a4595011f513[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Fri Aug 23 15:33:53 2024 -0300
+
+    [fix:3] - fix variable name to ref_name
+    
+    Signed-off-by: saracampss <saracampxx@gmail.com>
+
+[33mcommit a0ffc0d2ded2cfa320ac768411272e36c548f4ac[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Fri Aug 23 15:32:27 2024 -0300
+
+    [feat-99] - Implementação d edelete e update
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 33372592817a770ea56b9facf84eb82cf13770c5[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Fri Aug 23 15:08:34 2024 -0300
+
+    [devops:3] - add step in sonar-metrics to check if it is a branch or a tag
+    
+    Signed-off-by: saracampss <saracampxx@gmail.com>
+
+[33mcommit 2ca228ecd45db442852990327a39b6a0a324a9f7[m
+Merge: 57dd804 abf8593
+Author: saracampss <saracampxx@gmail.com>
+Date:   Fri Aug 23 14:31:17 2024 -0300
+
+    Merge branch 'devel' of github.com:fga-eps-mds/2024.1-SENTINELA-BACKEND-USUARIOS into devel
+
+[33mcommit 57dd804706c953dd156e43bb1d514e250eea6c0c[m
+Merge: becdf54 c752c08
+Author: Sara Campos <48694180+saracampss@users.noreply.github.com>
+Date:   Sat Aug 17 00:08:25 2024 -0300
+
+    Merge pull request #25 from fga-eps-mds/52-fix-membership-request
+    
+    52 fix membership request
+
+[33mcommit f16497a2aac68e67f329207df55d72a3d3bf1cbc[m
+Merge: ac874b4 3838b80
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Thu Aug 22 17:39:30 2024 -0300
+
+    [feat-99] - Implementação do update
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit ac874b45efe5d1b503d194f2e47cc1f9271df81b[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Thu Aug 22 17:38:03 2024 -0300
+
+    [feat-99] - Implementação do update
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 3838b80cf2eb2ce5fe42a58220bf724b17e11475[m
+Author: Diogo-Barboza <diogorodriguesbb@gmail.com>
+Date:   Thu Aug 22 17:12:52 2024 -0300
+
+    [fix:99] fixing routes
+    
+    Co-authored-by:  MilenaFRocha <milenafernandes594@gmail.com>
+
+[33mcommit 37771a871c0f0ffc5066441388a2f9f5b333baab[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Wed Aug 21 20:05:26 2024 -0300
+
+    [feat-99] - Subindo os métodos get e list da us35
+    
+    Co-Authored-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit abf8593bc2247f49b4b87c2ef1776e096d99234f[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Wed Aug 21 15:07:03 2024 -0300
+
+    [fix:3] - remove tag from release workflow
+    
+    Signed-off-by: saracampss <saracampxx@gmail.com>
+
+[33mcommit d5da1659ccd1f97ee2e5b819639afeff19b0e27e[m
+Merge: becdf54 c752c08
+Author: Sara Campos <48694180+saracampss@users.noreply.github.com>
+Date:   Sat Aug 17 00:08:25 2024 -0300
+
+    Merge pull request #25 from fga-eps-mds/52-fix-membership-request
+    
+    52 fix membership request
+
+[33mcommit c752c0872e5388217f9e3a6cebe60fad53120946[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Fri Aug 16 23:41:36 2024 -0300
+
+    [fix:52] - fix mongodb image version on docker
+    
+    Signed-off-by: saracampss <saracampxx@gmail.com>
+
+[33mcommit 666bff12a83e8617c09d99b8c2a7da9a3cfd7866[m
+Author: storch7 <guilhermestorch7@gmail.com>
+Date:   Fri Aug 16 22:02:30 2024 -0300
+
+    [fix:52] modificação dos enums para receber valores vazios
+
+[33mcommit d8fbbd1413b12ca863bf5875f736b7a8fc7947d8[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Wed Aug 14 12:47:06 2024 -0300
+
+    [tests:52] Melhoria da escrita da suite de testes
+
+[33mcommit cb3dbf15657b7eba3a58af5aa011611a130750e2[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Wed Aug 14 12:42:35 2024 -0300
+
+    [tests:52] Correções de ambiente e suite de testes
+
+[33mcommit becdf54732fd9b8002faa559c14d18175b795125[m
+Merge: be56616 28c13ba
+Author: Álvaro Gouvea <44756822+AlGouvea@users.noreply.github.com>
+Date:   Wed Aug 14 11:59:09 2024 -0300
+
+    Merge pull request #23 from fga-eps-mds/hotfix-release-1
+    
+    [hotfix] - fix commented import.
+
+[33mcommit 28c13ba52d8b91b940cbe50ee158f4e750fb9987[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Wed Aug 14 11:55:04 2024 -0300
+
+    [hotfix] - fix commented import.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit be56616f12911eff19d6b66ce8d182351a0fd806[m
+Merge: 34b6223 63be146
+Author: Victor Yukio Cavalcanti Miki <36861357+yukioz@users.noreply.github.com>
+Date:   Wed Aug 14 06:21:19 2024 -0300
+
+    Merge pull request #22 from fga-eps-mds/52-manage-membership-request
+    
+    52 manage membership request
+
+[33mcommit 63be146679084d7a79eb50600acd123e14e51cbb[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Wed Aug 14 06:16:52 2024 -0300
+
+    [fix:52] - fix tests.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit f7af8316421443f79581fb3ec466dc347bb94c44[m
+Merge: 1410484 34b6223
+Author: yukioz <yukio.link@gmail.com>
+Date:   Wed Aug 14 05:48:00 2024 -0300
+
+    Merge branch 'devel' of github.com:fga-eps-mds/2024.1-SENTINELA-BACKEND-USUARIOS into 52-manage-membership-request
+
+[33mcommit 141048441ec068a47a791a07ce2d6252dfddf175[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Wed Aug 14 05:46:41 2024 -0300
+
+    [fix:52] - remove consoles
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 8462f6d2cb4d424149d1a4af923701e3d10a4701[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Wed Aug 14 05:43:49 2024 -0300
+
+    [fix:52] - finish merging users and membership
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 34b6223816d064ece025d68795994c28d34b3880[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Wed Aug 14 04:09:24 2024 -0300
+
+    [fix:3] - udpate sonar exclusions
+    
+    Signed-off-by: saracampss <saracampxx@gmail.com>
+
+[33mcommit 729f47b0bce3338bae87dbc0820fcb8ec199932c[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Wed Aug 14 04:08:37 2024 -0300
+
+    [fix:3] - update release workflow
+    
+    Signed-off-by: saracampss <saracampxx@gmail.com>
+
+[33mcommit 105e5cd283847d707c91a075cbe46bb9f435e705[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Fri Aug 9 18:27:23 2024 -0300
+
+    [fix:52] - fix update membership status.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 0baf35fffe1c4b4c479bc35bd41efa0ccbdfbb5e[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Fri Aug 9 09:54:23 2024 -0300
+
+    [fix:52] - merge user and membership entities.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 3792234dbd7e1182a1c1becac6d20b390cae0a3c[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Tue Aug 6 02:14:43 2024 -0300
+
+    [feat:53] - recover password link page.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 7e8ef2ca5971f82bfcb156eca8851f415115372c[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Sat Aug 3 15:32:15 2024 -0300
+
+    [fix:52] - Lógica de email implementada
+    
+    Co-Authored-by: @storch7 <guilhermestorch7@gmail.com
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 4d1a30a2b927f0965c42e1e53203f585da9aa307[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Fri Aug 2 14:21:37 2024 -0300
+
+    [fix:52] - Lógica de deletar
+    
+    Co-Authored-by: @storch7 <guilhermestorch7@gmail.com
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 90e55a758c43671d0f951bf581db0796ac4c2657[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Fri Aug 2 00:10:11 2024 -0300
+
+    [fix:52] - atualização funcionando
+    
+    Co-Authored-by: @storch7 <guilhermestorch7@gmail.com
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 33b64c9302ad58473a3e7acbddfed99d8011c603[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Thu Aug 1 17:38:20 2024 -0300
+
+    [fix:52] - deletado o userStatus
+    
+    Co-Authored-by: @storch7 <guilhermestorch7@gmail.com
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit b5b235141c05838ef52d7aad926fcc2ce7849bc4[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Thu Aug 1 17:37:43 2024 -0300
+
+    [fix:52] - deletado o userStatus
+    
+    Co-Authored-by: @storch7 <guilhermestorch7@gmail.com
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit be1200b567ec2eeb16bca8bc8d5af465827b8da9[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Tue Jul 30 22:58:21 2024 -0300
+
+    [fix]: adding branch name to sonar metrics url
+
+[33mcommit 505f26e5c1116388a1962ef4f12763be7f771f94[m
+Merge: 5a1fa51 791e0fa
+Author: Sara Campos <48694180+saracampss@users.noreply.github.com>
+Date:   Tue Jul 30 15:55:42 2024 -0300
+
+    Merge pull request #17 from fga-eps-mds/deploy_teste
+    
+    Configurações do Deploy
+
+[33mcommit 791e0faaffa7dadf3bdcecd8edfe728d6e16a1b9[m
+Merge: be1c744 5a1fa51
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Tue Jul 30 15:51:37 2024 -0300
+
+    [deploy] Merge da devel
+
+[33mcommit 5a1fa5113b87ea18b9353d10d7839e3662c0484c[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Tue Jul 30 15:05:53 2024 -0300
+
+    [fix]: fixing url sonar-metrics
+
+[33mcommit 167f1d06c9f0fc4feaa1322d28a085e3cd37d4c5[m
+Merge: dae501c 608d877
+Author: Victor Yukio Cavalcanti Miki <36861357+yukioz@users.noreply.github.com>
+Date:   Mon Jul 29 23:42:08 2024 -0300
+
+    Merge pull request #8 from fga-eps-mds/17-membership-form
+    
+    17 membership form
+
+[33mcommit 608d877aa6436b00f6f9f3626650598b2165cfb6[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Mon Jul 29 23:34:17 2024 -0300
+
+    [merge:17] - resolve conflits.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 6ac8ed8b5e8592e6097790dbe7dcce8eab46a4dc[m
+Merge: 57d35d2 dae501c
+Author: yukioz <yukio.link@gmail.com>
+Date:   Mon Jul 29 23:08:21 2024 -0300
+
+    Merge branch 'devel' into 17-membership-form
+
+[33mcommit dae501cc48ad1feab9b427446b086319e21f3bbc[m
+Merge: 00a7891 54db809
+Author: Victor Yukio Cavalcanti Miki <36861357+yukioz@users.noreply.github.com>
+Date:   Mon Jul 29 04:37:40 2024 -0300
+
+    Merge pull request #15 from fga-eps-mds/us33-profile-update
+    
+    Us33 profile update
+
+[33mcommit 54db80904d657b56c6439cc94d10a78514964596[m
+Merge: ce81768 00a7891
+Author: Victor Yukio <yukio@Victors-MacBook-Air.local>
+Date:   Mon Jul 29 04:35:59 2024 -0300
+
+    [merge:33] - resolve conflits
+    
+    Signed-off-by: Victor Yukio <yukio@Victors-MacBook-Air.local>
+
+[33mcommit 00a789166627d168e5bf01a03f304e6da2d48619[m
+Merge: ce34ef4 87b97b7
+Author: Victor Yukio Cavalcanti Miki <36861357+yukioz@users.noreply.github.com>
+Date:   Mon Jul 29 04:33:08 2024 -0300
+
+    Merge pull request #11 from fga-eps-mds/US04-Backend
+    
+    Us04 backend
+
+[33mcommit 87b97b79d921349ddf102c9abea6c071729fae65[m
+Author: Victor Yukio <yukio@Victors-MacBook-Air.local>
+Date:   Mon Jul 29 04:30:38 2024 -0300
+
+    [test:04] - merge tests.
+    
+    Signed-off-by: Victor Yukio <yukio@Victors-MacBook-Air.local>
+
+[33mcommit 02cbcf13c99b85a008b0f4e84bb97ee4eb21790d[m
+Merge: abaee68 ded057d
+Author: Victor Yukio <yukio@Victors-MacBook-Air.local>
+Date:   Mon Jul 29 04:25:08 2024 -0300
+
+    Merge branch 'US04-Backend' of https://github.com/fga-eps-mds/2024.1-SENTINELA-BACKEND-USUARIOS into US04-Backend
+
+[33mcommit abaee68da555a2cc4c007c166fdd31b3d2901a17[m
+Author: Victor Yukio <yukio@Victors-MacBook-Air.local>
+Date:   Mon Jul 29 04:24:15 2024 -0300
+
+    [test:04] - add more coverage.
+    
+    Signed-off-by: Victor Yukio <yukio@Victors-MacBook-Air.local>
+
+[33mcommit ded057d33310ca27b425081b588515b01cd4c721[m
+Merge: 2993f1d 5e3f4e8
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Mon Jul 29 03:18:38 2024 -0300
+
+    [fix:04] Corrigindo testes
+
+[33mcommit 2993f1da14004dd6d1b5bec963ee896febc8cc48[m
+Merge: 60781d5 ce34ef4
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Mon Jul 29 02:57:15 2024 -0300
+
+    [fix:04] Corrigindo conflitos + testes
+
+[33mcommit 5e3f4e8e38a88eb094b218e21953b7ee7af95b09[m
+Merge: 60781d5 ce34ef4
+Author: Victor Yukio <yukio@Victors-MacBook-Air.local>
+Date:   Mon Jul 29 01:58:32 2024 -0300
+
+    Merge branch 'devel' into US04-Backend
+
+[33mcommit be1c744271d49e2b589d9dc2c56d924a2150686e[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Sun Jul 28 16:37:43 2024 -0300
+
+    FIX
+
+[33mcommit 233ffee3c7636a7a669478ade336337fd17ed49e[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Sun Jul 28 16:30:07 2024 -0300
+
+    PORT
+
+[33mcommit 6f5c86efefcc425710c93b1752edf262996995d1[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Sun Jul 28 16:19:39 2024 -0300
+
+    [deploy] Remove npm install
+
+[33mcommit 223bc6a1c53b20be142360e7d591166624696ac0[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Sun Jul 28 16:11:44 2024 -0300
+
+    [deploy] Remove cors parameters
+
+[33mcommit 05cea69dd088fe531e4b96b671dbdfedd6d5b739[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Sun Jul 28 15:45:28 2024 -0300
+
+    [deploy] changed dockerfile
+
+[33mcommit 57d35d2759184da46890887c10f6083e57ca397a[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Sun Jul 28 13:46:13 2024 -0300
+
+    [fix:17] Corrigindo padrão de dados (status)
+
+[33mcommit 5845b5c1590e1287a68b0930ae088c90e40a5d08[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Sat Jul 27 21:01:19 2024 -0300
+
+    [fix:17] Correção de formato do código
+
+[33mcommit 0bb72575c69628dc9148580e99e8d54b7dd4df9f[m
+Merge: 1eca2d0 ce34ef4
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Sat Jul 27 20:59:23 2024 -0300
+
+    [fix:17] Resolução de conflitos com devel + alteração do admin user para teste
+
+[33mcommit ce817682c836e8c5d8e8394e9076d6fbeb6106b8[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Sat Jul 27 18:59:17 2024 -0300
+
+    [fix:33] Correção de formato de código
+
+[33mcommit 4959c7ac06ae520163291764f52a1d96d1ed9565[m
+Merge: fa056fe ce34ef4
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Sat Jul 27 18:57:04 2024 -0300
+
+    Resolução de conflitos com a devel
+
+[33mcommit 1eca2d0c5d1ec2a0357ae3171160284b457a49b7[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Sat Jul 27 18:54:29 2024 -0300
+
+    [feat:17] - campos de cargo e lotação ajustados
+    
+    Co-Authored-by: @storch7 <guilhermestorch7@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit ce34ef4418c17411f18edd3406d6b99f35d8027a[m
+Merge: a54f81d 5fcc797
+Author: Álvaro Gouvea <44756822+AlGouvea@users.noreply.github.com>
+Date:   Sat Jul 27 18:26:01 2024 -0300
+
+    Merge pull request #13 from fga-eps-mds/ci_tests_setup
+    
+     Configuração do CI
+
+[33mcommit 5fcc797a31a1226972f56f0fb2cc522cca9fbe47[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Sat Jul 27 13:31:43 2024 -0300
+
+    [config] - adiciona pipelines de lint e format ao ci
+
+[33mcommit 98c266a10e16cafffcfed9f418bccc92cc219820[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Sat Jul 27 13:16:26 2024 -0300
+
+    [config] cria rotina de pré commit
+
+[33mcommit 0fa778f0d7fb008dd39d94214a723b934e6ee881[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Sat Jul 27 12:58:54 2024 -0300
+
+    [config] configura prettier e eslint e padroniza código
+
+[33mcommit fa056fe822890dee220b7bed6820e17218094f38[m
+Merge: 757c547 f14744c
+Author: Álvaro Gouvea <44756822+AlGouvea@users.noreply.github.com>
+Date:   Sat Jul 27 12:44:41 2024 -0300
+
+    Merge branch 'devel' into us33-profile-update
+
+[33mcommit d85ff4a784068794fbaa9e20cfe9ac0945d3a277[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Sat Jul 27 12:07:38 2024 -0300
+
+    [config] - update env example
+
+[33mcommit 6dc3d179e50fd8f48e5dc560cdabaa094fdb7816[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Sat Jul 27 12:02:29 2024 -0300
+
+    [config] - adiciona env vars no arquivo de ci
+
+[33mcommit 67c0f0e5b5b6da8fd5a29b3d7ad8c432b71716d9[m
+Merge: 63617e0 f14744c
+Author: saracampss <saracampxx@gmail.com>
+Date:   Sat Jul 27 11:49:42 2024 -0300
+
+    Merge branch 'devel' into ci_tests_setup
+
+[33mcommit 63617e0bd8b7824b98452c4570887932df08abac[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Fri Jul 26 14:38:52 2024 -0300
+
+    [config] - Ajustes CI
+
+[33mcommit 60781d5636bca3bba8cbb154e061194215099571[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Fri Jul 26 23:43:42 2024 -0300
+
+    [fix:04] - fix bcrypt import and cors options.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit bc4c174c18306c20c0c2c1ca19eeb2f6c94ae5e1[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Fri Jul 26 17:29:55 2024 -0300
+
+    [feat:17] - Adiciona campo religião
+    
+    Co-Authored-by: @storch7 <guilhermestorch7@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit a3d6380055e88dd1f8761e4b296679181a16b281[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Thu Jul 25 22:31:59 2024 -0300
+
+    [config] - Configurando workflows
+
+[33mcommit 185a8c34a396d65d5e2f1b28ac4b74f344007737[m
+Merge: 93e3c39 ae161b6
+Author: Davi Nobre <101183717+Jagaima@users.noreply.github.com>
+Date:   Wed Jul 24 22:19:16 2024 -0300
+
+    [fix:04] Patch changes from backend
+    
+    backend patch changes
+
+[33mcommit ae161b616da055c5eb525c90224ffc076a355f12[m
+Author: Davi Nobre <davinobre.ik@gmail.com>
+Date:   Wed Jul 24 22:17:30 2024 -0300
+
+    [fix:04] Removing useless logs
+    
+    Signed-off-by: Davi Nobre <davinobre.ik@gmail.com>
+
+[33mcommit 3921e7082cc8d34ba6f0bc2ec44edc810a763f3a[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Wed Jul 24 21:56:55 2024 -0300
+
+    [fix:17] - Ajuste de validações de duplicadas
+    
+    Co-authored-by: @stroch <guilhermstorch7@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 8926bd195d0330c7595d7845a6cbbd24c772734b[m
+Author: Davi Nobre <davinobre.ik@gmail.com>
+Date:   Wed Jul 24 14:48:42 2024 -0300
+
+    PatchUser corrigido
+
+[33mcommit 757c547b7eaedddb7abd8b9d38587b776d52a16c[m
+Author: Jose Eduardo <jevrprado@gmail.com>
+Date:   Wed Jul 24 10:37:34 2024 -0300
+
+    [fix:33] - mudança na restrição de alteração de email
+    
+    Signed-off-by: Jose Eduardo <jevrprado@gmail.com>
+
+[33mcommit 73480b095e3c1f211876cd2df606ba445d8455cf[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Wed Jul 24 01:52:09 2024 -0300
+
+    [fix:17] - Ajuste de validações de duplicadas
+    
+    Co-authored-by: @stroch <guilhermstorch7@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit e815f89bbe5bd72e25b71873d5cc4b4792f08232[m
+Author: Victor Yukio <yukio@Victors-MacBook-Air.local>
+Date:   Tue Jul 23 13:09:39 2024 -0300
+
+    [fix] - fix verify user tokenId.
+    
+    Signed-off-by: Victor Yukio <yukio@Victors-MacBook-Air.local>
+
+[33mcommit 5f92d033453262b0a49c3fc5296e71b7892f1686[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Tue Jul 23 00:02:39 2024 -0300
+
+    [fix:17] - Ajuste de validações
+    
+    Co-authored-by: @stroch <guilhermstorch7@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 2f0058a3c33b0507eee30c90a8aae662bf07b389[m
+Author: Davi Nobre <davinobre.ik@gmail.com>
+Date:   Mon Jul 22 19:47:37 2024 -0300
+
+    mudança temporária
+
+[33mcommit e299fb4d09eb2c227b610bfac76a3751417f9892[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Mon Jul 22 04:51:22 2024 -0300
+
+    [test] - test enviroment created.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 2e1540e5e8ae7474c5e7a3eeb7378077ab0adaee[m
+Author: Diogo-Barboza <diogorodriguesbb@gmail.com>
+Date:   Sun Jul 21 15:46:09 2024 -0300
+
+    [feat:33] - Status no UserSchema
+    
+    Co-authored-by: Jose Eduardo <jevrprado@gmail.com>
+    Signed-off-by: Diogo-Barboza <diogorodriguesbb@gmail.com>
+
+[33mcommit 93e3c3945b64cdc991bde8bfa1d7e4b9c146a2de[m
+Merge: f14744c 06c4b24
+Author: Davi Nobre <101183717+Jagaima@users.noreply.github.com>
+Date:   Sat Jul 20 20:26:41 2024 -0300
+
+    Merge pull request #7 from Jagaima/devel
+    
+    Criando a integração com o front
+
+[33mcommit 06c4b244f0a51ed50d4f4ed5a4fdb9703a67f245[m
+Author: Davi Nobre <davinobre.ik@gmail.com>
+Date:   Sat Jul 20 20:23:25 2024 -0300
+
+    Criando a integração com o front
+    
+    Co-authored-by: Gam13 <joaovictorgam13@gmail.com>
+
+[33mcommit 047b7ef2919ec69b4c8443449721960245566f31[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Sat Jul 20 17:53:57 2024 -0300
+
+    [fix:17] - EndPoint funcionando sem dependente
+    
+    Co-authored-by: @stroch <guilhermstorch7@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 7a61e8c97817599de3c57f56ee66d9525d357309[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Sat Jul 20 13:34:33 2024 -0300
+
+    [fix:17] - Inicio da configuração do endPoint de POST
+    
+    Co-authored-by: @storch7 <guilhermestorch7@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit f14744cb17a5124a25d95cfe29329fd9b10aeacc[m
+Merge: a54f81d 169819d
+Author: Davi Nobre <101183717+Jagaima@users.noreply.github.com>
+Date:   Fri Jul 19 18:37:37 2024 -0300
+
+    Merge pull request #6 from Jagaima/devel
+    
+    criação de boolean status
+
+[33mcommit 1823116a11e8b3ea2c5c2fc1fe0783cb28ec82b9[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Thu Jul 18 13:33:52 2024 -0300
+
+    [fix:17] - Ajustando nomes de variáveis
+    
+    Co-authored-by: @storch7 <guilhermestorch7@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit d12c045dad443050021df8fa93f555d342f8f10b[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Thu Jul 18 13:33:22 2024 -0300
+
+    [fix:17] - Ajustando nomes de variáveis
+    
+    Co-authored-by: @storch7 <guilhermestorch7@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 41734ffc5a1a1dd57e69aac1cdc4c182c4234ae3[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Thu Jul 18 00:51:55 2024 -0300
+
+    [feat:17] - Model e Controller de filiação
+    
+    Co-authored-by: @storch7 <guilhermestorch7@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 74878a1b24a4445483f4fb3dd56bc475a34db0c7[m
+Author: Milena Linda <milenafernandes594@gmail.com>
+Date:   Thu Jul 18 00:45:33 2024 -0300
+
+    [feat:17] - Model e Controller de filiação
+    
+    Co-authored-by: @storch7 <guilhermestorch7@gmail.com>
+    Signed-off-by: Milena Linda <milenafernandes594@gmail.com>
+
+[33mcommit 169819d827ffef68fdc83d9250fe4a5f0e0da085[m
+Author: Davi Nobre <davinobre.ik@gmail.com>
+Date:   Wed Jul 17 22:55:04 2024 -0300
+
+    criação de boolean status
+
+[33mcommit 20a10e1e7eabf8f2bf9d9a2644061bb0d1e8714e[m
+Author: Victor Yukio <yukio@Victors-MacBook-Air.local>
+Date:   Wed Jul 17 19:50:18 2024 -0300
+
+    testando.
+    
+    Signed-off-by: Victor Yukio <yukio@Victors-MacBook-Air.local>
+
+[33mcommit a54f81d3068c6ab1356a35b20b55f3c59e2f2f04[m
+Merge: 7187c4e ce68fbe
+Author: Victor Yukio Cavalcanti Miki <36861357+yukioz@users.noreply.github.com>
+Date:   Wed Jul 17 02:17:14 2024 -0300
+
+    Merge pull request #5 from fga-eps-mds/adjustments
+    
+    add default admn user.
+
+[33mcommit ce68fbe343888cfef8d84d8deec3528324ee4391[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Wed Jul 17 02:15:54 2024 -0300
+
+    add default admn user.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 7187c4e9f536c1fd6be28d5f083b2317d5412228[m
+Merge: 3e3b527 698e471
+Author: Victor Yukio Cavalcanti Miki <36861357+yukioz@users.noreply.github.com>
+Date:   Wed Jul 17 01:37:45 2024 -0300
+
+    Merge pull request #4 from fga-eps-mds/adjustments
+    
+    Adjustments
+
+[33mcommit 698e4716f94c5cea765be0597b44f0f65fc56660[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Wed Jul 17 01:33:49 2024 -0300
+
+    fix user credentials and increment password security.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit c35817f25ee274c36f8f2b3dc6a5eba1c4679d42[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Tue Jul 16 23:02:13 2024 -0300
+
+    adjust enviroment variables.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 3e3b527836a4ef412c16ab6d97c282781366d8eb[m
+Merge: d2115f5 bbd6020
+Author: Victor Yukio Cavalcanti Miki <36861357+yukioz@users.noreply.github.com>
+Date:   Fri Jul 12 19:56:57 2024 -0300
+
+    Merge pull request #3 from fga-eps-mds/14-recover-password
+    
+    [feat/14] - recover password.
+
+[33mcommit bbd60205a2ffef4f3fd360712efb266092fa03c2[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Fri Jul 12 19:56:18 2024 -0300
+
+    [feat/14] - add collection and remove unused imports.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 4c32d18905668a5e598798b5d8aabbc58020e9ed[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu Jul 11 23:50:32 2024 -0300
+
+    [fix/14] - add env de base.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit cf8edd78b9a29565f1a688319f048b4213edc3fb[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu Jul 11 23:36:30 2024 -0300
+
+    [fix/14] - remove env.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit ea5283c3264c155080328063ec0defa54fba092a[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu Jul 11 23:33:39 2024 -0300
+
+    [fix/14] - add .env to gitignore.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 70309cca148e9779d6a75b593fd4326a1418f302[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu Jul 11 23:31:44 2024 -0300
+
+    [fix/14] - remove variables.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit bee88c83346651a1b244ce4e669207f0c8745d67[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu Jul 11 23:25:01 2024 -0300
+
+    [feat/14] - recover password.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit d2115f506a580f028bedaf8f132abdcc1f4a8add[m
+Merge: 3879d9f 110cd80
+Author: Victor Yukio Cavalcanti Miki <36861357+yukioz@users.noreply.github.com>
+Date:   Thu Jul 11 18:21:03 2024 -0300
+
+    Merge pull request #2 from fga-eps-mds/main
+    
+    criptografia de senha
+
+[33mcommit 110cd80b201080abf844781b37720adcb21a8bd7[m
+Merge: 189b86d a4fbd70
+Author: Victor Yukio Cavalcanti Miki <36861357+yukioz@users.noreply.github.com>
+Date:   Thu Jul 11 18:19:09 2024 -0300
+
+    Merge pull request #1 from fga-eps-mds/11-password-cryptography
+    
+    11 password cryptography
+
+[33mcommit a4fbd703c7ce85498543f8c50c199fafc53d0271[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu Jul 11 17:40:52 2024 -0300
+
+    [doc/11] - add PR template.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 767d3a857365a5d00d2b6ced23bbb57863132281[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu Jul 11 17:09:11 2024 -0300
+
+    [fix/11] - remove commentary.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 152459f52fd3620ee5c4e34a8421428850964beb[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Wed Jul 3 18:57:58 2024 -0300
+
+    [feat:11] - create user with cryptography password.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 3879d9f3ed478086e6463d95b113e22a7872f58e[m
+Author: AlGouvea <alvarohsgouvea@gmail.com>
+Date:   Wed Jul 3 14:40:51 2024 -0300
+
+    Verificação de senha no BD
+
+[33mcommit e820f0e2aaa991881ca219b4c4cfaf6adaa81a08[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu May 23 04:55:08 2024 -0300
+
+    [11] - code refactoring and organize file structure.
+    
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+
+[33mcommit 247aa644fa1a26a37d61ad5400acbfb6bc782f3f[m
+Author: saracampss <saracampxx@gmail.com>
+Date:   Wed May 22 19:01:39 2024 -0300
+
+    Create login route
+    
+    Co-authored-by: AlGouvea<alvarohsgouvea@gmail.com>
+    Co-authored-by: ingridSCarvalho <ingridcarvalhoisc30@gmail.com>
+    Co-authored-by: yukioz <yukio.link@gmail.com>"
+
+[33mcommit 189b86d69ee60e8bad6e489ffe8010bb6f6384c2[m
+Author: yukioz <yukio.link@gmail.com>
+Date:   Thu May 16 20:06:58 2024 -0300
+
+    Signed-off-by: yukioz <yukio.link@gmail.com>
+    Co-authored-by: AlGouvea<alvarohsgouvea@gmail.com>
+
+[33mcommit b5b2dc42bfefcb72fc3ad11025c48ed3bf6ac093[m
+Author: Victor Yukio Cavalcanti Miki <36861357+yukioz@users.noreply.github.com>
+Date:   Mon May 13 17:25:43 2024 -0300
+
+    Initial commit
