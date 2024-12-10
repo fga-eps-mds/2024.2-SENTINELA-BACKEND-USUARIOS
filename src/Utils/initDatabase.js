@@ -10,6 +10,7 @@
 Altere os dados de forma que melhor desejar para iniciar o banco de dados com um usuário comum e um usuario Administrador.
 */
 
+require('dotenv').config;
 // ./utils/initRoles.js
 const mongoose = require("mongoose");
 const Role = require("../Models/roleSchema"); // Ajuste o caminho conforme necessário
