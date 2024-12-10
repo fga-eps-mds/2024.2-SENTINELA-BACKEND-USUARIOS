@@ -4,7 +4,7 @@ const generator = require("generate-password");
 const bcrypt = require("bcryptjs");
 const Token = require("../Models/tokenSchema");
 const { generateRecoveryPasswordToken } = require("../Utils/token");
-const salt = bcrypt.genSaltSync();
+const saltRounds = 13;
 const Role = require("../Models/roleSchema");
 
 const createMembershipForm = async (req, res) => {
@@ -45,12 +45,7 @@ const createMembershipForm = async (req, res) => {
 
         const membership = new Membership(formData);
 
-        const temp_pass = generator.generate({
-            length: 8,
-            numbers: true,
-        });
-
-        membership.password = bcrypt.hashSync(temp_pass, salt);
+        membership.password = await bcrypt.hash(formData.senha, saltRounds);
 
         await membership.save();
         return res.status(201).send(membership);
@@ -58,6 +53,7 @@ const createMembershipForm = async (req, res) => {
         return res.status(500).send({ error });
     }
 };
+
 
 const getMembershipForm = async (req, res) => {
     try {
