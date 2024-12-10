@@ -11,7 +11,7 @@ const { sendEmail } = require("../Utils/email");
 const generator = require("generate-password");
 const Token = require("../Models/tokenSchema");
 
-const salt = bcrypt.genSaltSync();
+const saltRounds = 13;
 
 const signUp = async (req, res) => {
     try {
@@ -22,7 +22,7 @@ const signUp = async (req, res) => {
             numbers: true,
         });
 
-        user.password = bcrypt.hashSync(temp_pass, salt);
+        user.password = bcrypt.hashSync(temp_pass, saltRounds);
 
         await user.save();
 
@@ -331,7 +331,7 @@ const changePassword = async (req, res) => {
             return res.status(404).send({ message: "usuário não encontrado" });
         }
 
-        user.password = bcrypt.hashSync(newPassword, salt);
+        user.password = bcrypt.hashSync(newPassword, saltRounds);
 
         await user.save();
         await Token.findOneAndDelete({ email: user.email });
@@ -364,7 +364,7 @@ const changePasswordInProfile = async (req, res) => {
             });
         }
 
-        user.password = bcrypt.hashSync(new_password, salt);
+        user.password = bcrypt.hashSync(new_password, saltRounds);
         await user.save();
 
         return res.status(200).json({
