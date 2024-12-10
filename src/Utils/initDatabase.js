@@ -10,7 +10,7 @@
 Altere os dados de forma que melhor desejar para iniciar o banco de dados com um usuário comum e um usuario Administrador.
 */
 
-require('dotenv').config;
+require("dotenv").config;
 // ./utils/initRoles.js
 const mongoose = require("mongoose");
 const Role = require("../Models/roleSchema"); // Ajuste o caminho conforme necessário
@@ -24,6 +24,17 @@ const celularAdmin = process.env.Admin_celular;
 const senhaUser = process.env.User_senha;
 const emailUser = process.env.User_email;
 const celularUser = process.env.User_celular;
+
+// Load environment variables
+require("dotenv").config();
+
+// Example usage of environment variables
+console.log("Admin Email:", process.env.Admin_email);
+console.log("Admin Celular:", process.env.Admin_celular);
+console.log("Admin Senha:", process.env.Admin_senha);
+console.log("User Email:", process.env.User_email);
+console.log("User Celular:", process.env.User_celular);
+console.log("User Senha:", process.env.User_senha);
 
 const initializeRoles = async () => {
     const roles = [
