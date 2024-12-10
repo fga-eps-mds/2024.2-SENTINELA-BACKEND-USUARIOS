@@ -52,12 +52,15 @@ const createMembershipForm = async (req, res) => {
 
         membership.password = bcrypt.hashSync(temp_pass, saltRounds);
 
+
+
         await membership.save();
         return res.status(201).send(membership);
     } catch (error) {
         return res.status(500).send({ error });
     }
 };
+
 
 const getMembershipForm = async (req, res) => {
     try {
