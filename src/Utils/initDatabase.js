@@ -4,7 +4,6 @@ const Role = require("../Models/roleSchema"); // Ajuste o caminho conforme neces
 const User = require("../Models/userSchema");
 const { hashSenha, comparaSenha } = require("./passwordController");
 
-
 //dados a seguir devem ser colocados em variáveis de ambiente.
 const senhaAdmin = "senha";
 const emailAdmin = "admim@admin.com";
@@ -12,7 +11,6 @@ const celularAdmin = "1234567890";
 const senhaUser = "senha";
 const emailUser = "user@user.com";
 const celularUser = "61981818181";
-
 
 const initializeRoles = async () => {
     const roles = [
@@ -99,7 +97,6 @@ const initializeRoles = async () => {
             }
 
             const existingAdmin = await User.findOne({
-
                 email: emailAdmin,
             });
             if (!existingAdmin) {
@@ -126,7 +123,6 @@ const initializeRoles = async () => {
             });
             if (!ExistingSindicalizado) {
                 const hashedPassword = hashSenha(senhaUser);
-
 
                 const sindUser = new User({
                     name: "User",
