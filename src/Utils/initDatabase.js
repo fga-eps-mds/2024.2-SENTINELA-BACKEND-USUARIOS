@@ -100,7 +100,7 @@ const initializeRoles = async () => {
                 email: emailAdmin,
             });
             if (!existingAdmin) {
-                const hashedPassword = hashSenha(senhaAdmin);
+                const hashedPassword = await hashSenha(senhaAdmin);
 
                 const adminUser = new User({
                     name: "Admin",
@@ -122,7 +122,7 @@ const initializeRoles = async () => {
                 email: emailUser,
             });
             if (!ExistingSindicalizado) {
-                const hashedPassword = hashSenha(senhaUser);
+                const hashedPassword = await hashSenha(senhaUser);
 
                 const sindUser = new User({
                     name: "User",

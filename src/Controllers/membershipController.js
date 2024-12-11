@@ -49,7 +49,7 @@ const createMembershipForm = async (req, res) => {
             numbers: true,
         });
 
-        membership.password = hashSenha(temp_pass);
+        membership.password = await hashSenha(temp_pass);
         await membership.save();
         return res.status(201).send(membership);
     } catch (error) {

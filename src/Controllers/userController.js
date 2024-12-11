@@ -20,7 +20,7 @@ const signUp = async (req, res) => {
             numbers: true,
         });
 
-        user.password = hashSenha(temp_pass);
+        user.password = await hashSenha(temp_pass);
 
         await user.save();
 
@@ -84,7 +84,8 @@ const login = async (req, res) => {
                 return res
                     .status(400)
                     .send({ error: "Email ou senha inválidos." });
-            } else if (!comparaSenha(password, user.password)) {
+                // eslint-disable-next-line prettier/prettier
+            } else if (!(await comparaSenha(password, user.password))) {
                 return res
                     .status(400)
                     .send({ error: "Email ou senha inválidos." });
@@ -328,7 +329,7 @@ const changePassword = async (req, res) => {
             return res.status(404).send({ message: "usuário não encontrado" });
         }
 
-        user.password = hashSenha(newPassword);
+        user.password = await hashSenha(newPassword);
 
         await user.save();
         await Token.findOneAndDelete({ email: user.email });
@@ -355,13 +356,14 @@ const changePasswordInProfile = async (req, res) => {
         if (!user) {
             return res.status(404).send();
         }
-        if (!comparaSenha(old_password, user.password)) {
+        // eslint-disable-next-line prettier/prettier
+        if (!(await comparaSenha(old_password, user.password))) {
             return res.status(401).json({
                 mensagem: "Senha atual incorreta.",
             });
         }
 
-        user.password = hashSenha(new_password);
+        user.password = await hashSenha(new_password);
         await user.save();
 
         return res.status(200).json({
