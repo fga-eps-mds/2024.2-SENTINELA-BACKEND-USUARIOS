@@ -27,7 +27,22 @@ const comparaSenha = async (senha, senhaSalva) => {
     }
 };
 
+const validaSenha = (novaSenha) => {
+    const comprimentoMinimo = 8;
+    const temMaiuscula = /[A-Z]/.test(novaSenha);
+    const temMinuscula = /[a-z]/.test(novaSenha);
+    const temNumero = /\d/.test(novaSenha);
+
+    return (
+        novaSenha.legnth >= comprimentoMinimo &&
+        temMinuscula &&
+        temMaiuscula &&
+        temNumero
+    );
+};
+
 module.exports = {
     hashSenha,
     comparaSenha,
+    validaSenha,
 };
