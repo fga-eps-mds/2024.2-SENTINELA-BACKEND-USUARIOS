@@ -84,7 +84,6 @@ const login = async (req, res) => {
                 return res
                     .status(400)
                     .send({ error: "Email ou senha inválidos." });
-                // eslint-disable-next-line prettier/prettier
             } else if (!(await comparaSenha(password, user.password))) {
                 return res
                     .status(400)
@@ -356,7 +355,6 @@ const changePasswordInProfile = async (req, res) => {
         if (!user) {
             return res.status(404).send();
         }
-        // eslint-disable-next-line prettier/prettier
         if (!(await comparaSenha(old_password, user.password))) {
             return res.status(401).json({
                 mensagem: "Senha atual incorreta.",
