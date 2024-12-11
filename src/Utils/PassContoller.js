@@ -4,7 +4,7 @@ const saltRounds = 13;
 const hashSenha = async (senha) => {
     try {
         const hashSenha = await bcrypt.hash(senha, saltRounds);
-        return { status: true, hash };
+        return { status: true, hashSenha };
     } catch (error) {
         console.error("N�o foi poss�vel criar a hash", error);
         return {
@@ -17,7 +17,7 @@ const hashSenha = async (senha) => {
 const comparaSenha = async (senha, senhaSalva) => {
     try {
         const comparaSenha = await bcrypt.compare(senha, senhaSalva);
-        return { status: true, match };
+        return { status: true, comparaSenha };
     } catch (error) {
         console.error("erro ao comparar senha", error);
         return {
@@ -27,7 +27,7 @@ const comparaSenha = async (senha, senhaSalva) => {
     }
 };
 
-module.export = {
+module.exports = {
     hashSenha,
     comparaSenha,
 };
