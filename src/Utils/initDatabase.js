@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 const Role = require("../Models/roleSchema"); // Ajuste o caminho conforme necessário
 const User = require("../Models/userSchema");
-const { hashSenha } = require("./passwordController");
+const { hashSenha } = require("./senha");
 
 //dados a seguir devem ser colocados em variáveis de ambiente.
 const senhaAdmin = "senha";

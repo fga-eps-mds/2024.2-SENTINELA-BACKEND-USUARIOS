@@ -1,7 +1,7 @@
 const { sendEmail } = require("../Utils/email");
 const Membership = require("../Models/membershipSchema");
 const generator = require("generate-password");
-const { hashSenha } = require("../utils/passwordController");
+const { hashSenha } = require("../utils/senha");
 const Token = require("../Models/tokenSchema");
 const { generateRecoveryPasswordToken } = require("../Utils/token");
 const Role = require("../Models/roleSchema");
