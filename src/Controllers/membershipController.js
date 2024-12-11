@@ -1,10 +1,9 @@
 const { sendEmail } = require("../Utils/email");
 const Membership = require("../Models/membershipSchema");
 const generator = require("generate-password");
-const bcrypt = require("bcryptjs");
+const { hashSenha } = require("../Utils/senha");
 const Token = require("../Models/tokenSchema");
 const { generateRecoveryPasswordToken } = require("../Utils/token");
-const saltRounds = 13;
 const Role = require("../Models/roleSchema");
 
 const createMembershipForm = async (req, res) => {
@@ -45,16 +44,18 @@ const createMembershipForm = async (req, res) => {
 
         const membership = new Membership(formData);
 
-        membership.password = await bcrypt.hash(formData.senha, saltRounds);
+        const temp_pass = generator.generate({
+            length: 8,
+            numbers: true,
+        });
 
+        membership.password = await hashSenha(temp_pass);
         await membership.save();
         return res.status(201).send(membership);
     } catch (error) {
         return res.status(500).send({ error });
     }
 };
-
-
 const getMembershipForm = async (req, res) => {
     try {
         const sindRole = await Role.findOne({ name: "sindicalizado" });
