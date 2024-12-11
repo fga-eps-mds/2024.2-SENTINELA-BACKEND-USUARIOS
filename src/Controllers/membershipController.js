@@ -1,10 +1,9 @@
 const { sendEmail } = require("../Utils/email");
 const Membership = require("../Models/membershipSchema");
 const generator = require("generate-password");
-const bcrypt = require("bcryptjs");
+const { hashSenha } = require("../utils/passwordController");
 const Token = require("../Models/tokenSchema");
 const { generateRecoveryPasswordToken } = require("../Utils/token");
-const saltRounds = 13;
 const Role = require("../Models/roleSchema");
 
 const createMembershipForm = async (req, res) => {
@@ -50,7 +49,7 @@ const createMembershipForm = async (req, res) => {
             numbers: true,
         });
 
-        membership.password = bcrypt.hashSync(temp_pass, saltRounds);
+        membership.password = hashSenha(temp_pass);
         await membership.save();
         return res.status(201).send(membership);
     } catch (error) {

@@ -1,8 +1,8 @@
 const User = require("../Models/userSchema");
 const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
+const { hashSenha, comparaSenha } = require("../utils/passwordController");
 
-const bcrypt = require("bcryptjs");
 const {
     generateToken,
     generateRecoveryPasswordToken,
@@ -10,8 +10,6 @@ const {
 const { sendEmail } = require("../Utils/email");
 const generator = require("generate-password");
 const Token = require("../Models/tokenSchema");
-
-const saltRounds = 13;
 
 const signUp = async (req, res) => {
     try {
@@ -22,7 +20,7 @@ const signUp = async (req, res) => {
             numbers: true,
         });
 
-        user.password = bcrypt.hashSync(temp_pass, saltRounds);
+        user.password = hashSenha(temp_pass);
 
         await user.save();
 
@@ -86,7 +84,7 @@ const login = async (req, res) => {
                 return res
                     .status(400)
                     .send({ error: "Email ou senha inválidos." });
-            } else if (!bcrypt.compareSync(password, user.password)) {
+            } else if (!comparaSenha(password, user.password)) {
                 return res
                     .status(400)
                     .send({ error: "Email ou senha inválidos." });
@@ -330,7 +328,7 @@ const changePassword = async (req, res) => {
             return res.status(404).send({ message: "usuário não encontrado" });
         }
 
-        user.password = bcrypt.hashSync(newPassword, saltRounds);
+        user.password = hashSenha(newPassword);
 
         await user.save();
         await Token.findOneAndDelete({ email: user.email });
@@ -357,13 +355,13 @@ const changePasswordInProfile = async (req, res) => {
         if (!user) {
             return res.status(404).send();
         }
-        if (!bcrypt.compareSync(old_password, user.password)) {
+        if (!comparaSenha(old_password, user.password)) {
             return res.status(401).json({
                 mensagem: "Senha atual incorreta.",
             });
         }
 
-        user.password = bcrypt.hashSync(new_password, saltRounds);
+        user.password = hashSenha(new_password);
         await user.save();
 
         return res.status(200).json({

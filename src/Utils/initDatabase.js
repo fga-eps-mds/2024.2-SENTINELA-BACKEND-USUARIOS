@@ -1,36 +1,17 @@
-/*Para inicializar o Database você precisa criar um arquivo .env na raiz do projeto com os seguintes dados:
-######################################################################################
-    Admin_email=
-    Admin_celular=
-    Admin_senha=
-    User_email=
-    User_celular=
-    User_senha=
-######################################################################################
-Altere os dados de forma que melhor desejar para iniciar o banco de dados com um usuário comum e um usuario Administrador.
-*/
-
 require("dotenv").config;
 // ./utils/initRoles.js
 const mongoose = require("mongoose");
 const Role = require("../Models/roleSchema"); // Ajuste o caminho conforme necessário
 const User = require("../Models/userSchema");
-const bcrypt = require("bcryptjs");
-const saltRounds = 13;
+const { hashSenha, comparaSenha } = require("./passwordController");
 
-const senhaAdmin = process.env.Admin_senha;
-const emailAdmin = process.env.Admin_email;
-const celularAdmin = process.env.Admin_celular;
-const senhaUser = process.env.User_senha;
-const emailUser = process.env.User_email;
-const celularUser = process.env.User_celular;
-
-console.log("Admin Email:", process.env.Admin_email);
-console.log("Admin Celular:", process.env.Admin_celular);
-console.log("Admin Senha:", process.env.Admin_senha);
-console.log("User Email:", process.env.User_email);
-console.log("User Celular:", process.env.User_celular);
-console.log("User Senha:", process.env.User_senha);
+//dados a seguir devem ser colocados em variáveis de ambiente.
+const senhaAdmin = "senha";
+const emailAdmin = "admim@admin.com";
+const celularAdmin = "1234567890";
+const senhaUser = "senha";
+const emailUser = "user@user.com";
+const celularUser = "61981818181";
 
 const initializeRoles = async () => {
     const roles = [
@@ -121,10 +102,7 @@ const initializeRoles = async () => {
                 email: emailAdmin,
             });
             if (!existingAdmin) {
-                const hashedPassword = await bcrypt.hash(
-                    senhaAdmin,
-                    saltRounds
-                );
+                const hashedPassword = hashSenha(senhaAdmin);
 
                 const adminUser = new User({
                     name: "Admin",
@@ -146,7 +124,7 @@ const initializeRoles = async () => {
                 email: emailUser,
             });
             if (!ExistingSindicalizado) {
-                const hashedPassword = await bcrypt.hash(senhaUser, saltRounds);
+                const hashedPassword = hashSenha(senhaUser);
 
                 const sindUser = new User({
                     name: "User",
