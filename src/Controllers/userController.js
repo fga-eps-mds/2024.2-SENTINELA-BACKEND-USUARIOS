@@ -1,7 +1,7 @@
 const User = require("../Models/userSchema");
 const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
-const { hashSenha, comparaSenha } = require("../utils/senha");
+const { hashSenha, comparaSenha } = require("../Utils/senha");
 
 const {
     generateToken,
