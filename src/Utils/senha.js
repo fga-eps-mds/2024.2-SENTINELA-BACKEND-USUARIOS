@@ -33,6 +33,24 @@ const validaSenha = (novaSenha) => {
     const temMinuscula = /[a-z]/.test(novaSenha);
     const temNumero = /\d/.test(novaSenha);
 
+    if (novaSenha < comprimentoMinimo) {
+        console.error(
+            "Erro: A senha deve ter pelo menos ${comprimentoMinimo} caracteres"
+        );
+    }
+
+    if (!temMaiuscula) {
+        console.error("Erro: A senha deve ter pelo menos uma letra maiuscula");
+    }
+
+    if (!temMinuscula) {
+        console.error("Erro: A senha deve ter pelo menos uma letra minuscula");
+    }
+
+    if (!temNumero) {
+        console.error("Erro: A senha deve ter pelo menos um numero");
+    }
+
     return (
         novaSenha.legnth >= comprimentoMinimo &&
         temMinuscula &&
