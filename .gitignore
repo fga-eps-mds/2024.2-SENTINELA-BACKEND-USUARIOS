@@ -17,5 +17,5 @@ package-lock.json
 # Arquivos de configuração de IDEs
 .idea
 .vscode
-.env
 .vs/
+
