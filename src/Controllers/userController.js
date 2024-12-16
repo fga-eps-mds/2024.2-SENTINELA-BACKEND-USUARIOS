@@ -302,9 +302,9 @@ const changePassword = async (req, res) => {
     try {
         const user = await User.findById(userId);
 
-        if (!user) {
-            return res.status(404).send({ message: "usuário não encontrado" });
-        }
+        // if (!user) {
+        //     return res.status(404).send({ message: "usuário não encontrado" });
+        // }
 
         user.password = bcrypt.hashSync(newPassword, salt);
 
