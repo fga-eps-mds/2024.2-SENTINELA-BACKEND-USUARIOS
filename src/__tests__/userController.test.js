@@ -245,7 +245,7 @@ describe("User Controller Tests", () => {
 
     it("deve alterar a senha com sucesso", async () => {
         const response = await request(app)
-            .patch(`/users/change-password/${userId}`) // Substitua com a rota correta
+            .patch(`/users/change-password/${userId}`)
             .send({
                 newPassword: "senha",
             });
@@ -254,5 +254,15 @@ describe("User Controller Tests", () => {
         expect(response.body).toEqual({
             mensagem: "senha alterada com sucesso.",
         });
+    });
+
+    it("deve alterar a senha sem sucesso", async () => {
+        const response = await request(app)
+            .patch("/users/change-password/invalido")
+            .send({
+                newPassword: "senha",
+            });
+
+        expect(response.status).toBe(500);
     });
 });
