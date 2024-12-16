@@ -327,24 +327,20 @@ const changePasswordInProfile = async (req, res) => {
 
     const userId = await getLoggedUserId(req, res);
 
-    try {
-        const user = await User.findById(userId);
+    const user = await User.findById(userId);
 
-        if (!bcrypt.compareSync(old_password, user.password)) {
-            return res.status(401).json({
-                mensagem: "Senha atual incorreta.",
-            });
-        }
-
-        user.password = bcrypt.hashSync(new_password, salt);
-        await user.save();
-
-        return res.status(200).json({
-            mensagem: "senha alterada com sucesso.",
+    if (!bcrypt.compareSync(old_password, user.password)) {
+        return res.status(401).json({
+            mensagem: "Senha atual incorreta.",
         });
-    } catch (error) {
-        return res.status(500).send({ myerror: error });
     }
+
+    user.password = bcrypt.hashSync(new_password, salt);
+    await user.save();
+
+    return res.status(200).json({
+        mensagem: "senha alterada com sucesso.",
+    });
 };
 
 module.exports = {
