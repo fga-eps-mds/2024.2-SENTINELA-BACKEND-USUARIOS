@@ -222,4 +222,24 @@ describe("User Controller Tests", () => {
         expect(res.status).toBe(401);
         expect(res.body).toEqual({ mensagem: "Tokem não fornecido." });
     });
+
+    it("should update a user", async () => {
+        const res = await request(app)
+            .patch(`/users/renew-password`)
+            .set("Authorization", `Bearer ${authToken}`)
+            .send({ old_password: "senha", new_password: "senha2" });
+
+        expect(res.status).toBe(200);
+        expect(res.body).toEqual({ mensagem: "senha alterada com sucesso." });
+    });
+
+    it("should not update a user", async () => {
+        const res = await request(app)
+            .patch(`/users/renew-password`)
+            .set("Authorization", `Bearer ${authToken}`)
+            .send({ old_password: "senha234", new_password: "senha2" });
+
+        expect(res.status).toBe(401);
+        expect(res.body).toEqual({ mensagem: "Senha atual incorreta." });
+    });
 });
