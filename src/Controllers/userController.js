@@ -330,9 +330,6 @@ const changePasswordInProfile = async (req, res) => {
     try {
         const user = await User.findById(userId);
 
-        if (!user) {
-            return res.status(404).send();
-        }
         if (!bcrypt.compareSync(old_password, user.password)) {
             return res.status(401).json({
                 mensagem: "Senha atual incorreta.",
