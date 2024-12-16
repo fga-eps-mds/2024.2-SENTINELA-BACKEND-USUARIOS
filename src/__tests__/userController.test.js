@@ -242,4 +242,17 @@ describe("User Controller Tests", () => {
         expect(res.status).toBe(401);
         expect(res.body).toEqual({ mensagem: "Senha atual incorreta." });
     });
+
+    it("deve alterar a senha com sucesso", async () => {
+        const response = await request(app)
+            .patch(`/users/change-password/${userId}`) // Substitua com a rota correta
+            .send({
+                newPassword: "senha",
+            });
+
+        expect(response.status).toBe(200);
+        expect(response.body).toEqual({
+            mensagem: "senha alterada com sucesso.",
+        });
+    });
 });
