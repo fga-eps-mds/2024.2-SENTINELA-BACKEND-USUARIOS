@@ -1,12 +1,10 @@
-require("dotenv").config();
-
 // ./utils/initRoles.js
 const mongoose = require("mongoose");
 const Role = require("../Models/roleSchema"); // Ajuste o caminho conforme necessário
 const User = require("../Models/userSchema");
 const bcrypt = require("bcryptjs");
 
-const saltRounds = 13;
+const salt = bcrypt.genSaltSync();
 
 const initializeRoles = async () => {
     const roles = [
@@ -55,6 +53,7 @@ const initializeRoles = async () => {
     ];
 
     try {
+        // Verificar se a conexão está aberta antes de executar
         if (mongoose.connection.readyState === 1) {
             for (const roleData of roles) {
                 const existingRole = await Role.findOne({
@@ -76,7 +75,9 @@ const initializeRoles = async () => {
     }
 
     try {
+        // Verificar se a conexão está aberta antes de executar
         if (mongoose.connection.readyState === 1) {
+            // Busca o user 'administrador'
             const adminRole = await Role.findOne({ name: "administrador" });
             if (!adminRole) {
                 console.error(
@@ -92,19 +93,18 @@ const initializeRoles = async () => {
                 return;
             }
 
+            // Verifica se o usuário administrador já existe
             const existingAdmin = await User.findOne({
-                email: process.env.Admin_email,
+                email: "admin@admin.com",
             });
             if (!existingAdmin) {
-                const hashedPassword = await bcrypt.hash(
-                    process.env.Admin_senha,
-                    saltRounds
-                );
+                const hashedPassword = await bcrypt.hash("senha", salt); // Altere a senha padrão conforme necessário
 
+                // Cria o usuário administrador
                 const adminUser = new User({
                     name: "Admin",
-                    email: process.env.Admin_email,
-                    phone: process.env.Admin_celular,
+                    email: "admin@admin.com",
+                    phone: "1234567890",
                     status: true,
                     password: hashedPassword,
                     role: adminRole._id,
@@ -118,19 +118,16 @@ const initializeRoles = async () => {
             }
 
             const ExistingSindicalizado = await User.findOne({
-                email: process.env.User_email,
+                email: "user@user.com",
             });
             if (!ExistingSindicalizado) {
-                const hashedPassword = await bcrypt.hash(
-                    process.env.User_senha,
-                    saltRounds
-                ); // Altere a senha padrão conforme necessário
+                const hashedPassword = await bcrypt.hash("senha", salt); // Altere a senha padrão conforme necessário
 
                 // Cria o usuário administrador
                 const sindUser = new User({
                     name: "User",
-                    email: process.env.User_email,
-                    phone: process.env.User_celular,
+                    email: "user@user.com",
+                    phone: "61981818181",
                     status: true,
                     password: hashedPassword,
                     role: userRole,

@@ -86,6 +86,7 @@ describe("MembershipController Test Suite", () => {
     describe("POST /membership/create", () => {
         it("should create a new membership", async () => {
             const newMembership = generateMembershipData("001");
+            // console.log("Chaaaama no grau", newMembership);
             const response = await createMembership(newMembership);
             expect(response.status).toBe(201);
             expect(response.body).toHaveProperty("_id");
