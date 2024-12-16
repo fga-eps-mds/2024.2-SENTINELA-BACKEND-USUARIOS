@@ -50,7 +50,7 @@ const createMembershipForm = async (req, res) => {
             numbers: true,
         });
 
-        membership.password = bcrypt.hashSync(temp_pass, salt);
+        membership.password = bcrypt.hashSync(temp_pass, saltRounds);
 
         await membership.save();
         return res.status(201).send(membership);

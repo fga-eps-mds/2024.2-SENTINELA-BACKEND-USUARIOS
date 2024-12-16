@@ -206,4 +206,20 @@ describe("User Controller Tests", () => {
         expect(res.status).toBe(404);
         expect(res.body).toHaveProperty("mensagem", "Usuário não encontrado.");
     });
+
+    it("Deve retornar os dados do usuário logado (getLoggedUser)", async () => {
+        const res = await request(app)
+            .get("/user")
+            .set("Authorization", `Bearer ${authToken}`);
+
+        expect(res.status).toBe(200);
+        expect(res.body).toHaveProperty("_id");
+    });
+
+    it("should return 401 if token is not provided", async () => {
+        const res = await request(app).get("/user");
+
+        expect(res.status).toBe(401);
+        expect(res.body).toEqual({ mensagem: "Tokem não fornecido." });
+    });
 });

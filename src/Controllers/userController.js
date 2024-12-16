@@ -130,45 +130,31 @@ const getLoggedUserId = async (req, res) => {
     if (!token) {
         return res.status(401).json({ message: "Token não fornecido" });
     }
-
     try {
-        const decoded = jwt.verify(token, SECRET);
+        const decoded = jwt.verify(token, SECRET ?? "S3T1N3L3L4");
 
         userId = decoded.id;
     } catch (err) {
         console.log(err);
-        return res.status(401).json({ message: "Token inválido ou expirado" });
+        return -1;
     }
     return userId;
 };
 
 const getLoggedUser = async (req, res) => {
-    //let userId = await this.getLoggedUserId(req,res);
-
-    const token = req.headers.authorization?.split(" ")[1];
-
-    if (!token) {
-        return res.status(401).json({ message: "Token não fornecido" });
-    }
-
-    try {
-        const decoded = jwt.verify(token, SECRET);
-
-        userId = decoded.id;
-    } catch (err) {
-        console.log(err);
-
-        return res.status(401).json({ message: "Token inválido ou expirado" });
-    }
+    const userId = await getLoggedUserId(req, res);
 
     try {
         const user = await User.findById(userId).populate("role");
         if (!user) {
             return res.status(404).send();
         }
-        res.status(200).send(user);
+        return res.status(200).send(user);
     } catch (error) {
-        res.status(500).send(error);
+        // return res.status(500).send(error);
+        return res
+            .status(500)
+            .send({ message: error.message || "Erro interno no servidor" });
     }
 };
 
@@ -181,13 +167,6 @@ const patchUser = async (req, res) => {
         if (!user) {
             return res.status(404).send();
         }
-
-        // Verifique se o usuário tem permissão para atualizar os dados
-        // if (userId !== req.userId) {
-        //   return res.status(457).json({
-        //     mensagem: 'O token fornecido não tem permissão para finalizar a operação'
-        //   });
-        // }
 
         Object.assign(user, req.body.updatedUser);
 
@@ -370,17 +349,6 @@ const changePasswordInProfile = async (req, res) => {
         return res.status(500).send({ myerror: error });
     }
 };
-const teste = async (req, res) => {
-    try {
-        // eslint-disable-next-line no-unused-vars
-        const { status } = req.query;
-        const membership = await Membership.find({ religion: { $ne: null } });
-        return res.status(200).send(membership);
-    } catch (error) {
-        return res.status(400).send({ error });
-    }
-    return res.status(201).send("Xabl2");
-};
 
 module.exports = {
     signUp,
@@ -394,5 +362,4 @@ module.exports = {
     recoverPassword,
     changePassword,
     changePasswordInProfile,
-    teste,
 };
