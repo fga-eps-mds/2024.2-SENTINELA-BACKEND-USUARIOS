@@ -48,6 +48,8 @@ routes.patch(
 //
 routes.post("/membership/create", MembershipForm.createMembershipForm);
 routes.get("/membership", MembershipForm.getMembershipForm);
+routes.get("/logged-membership", MembershipForm.getLoggedMembershipForm);
+
 routes.delete("/membership/delete/:id", MembershipForm.deleteMembershipForm);
 routes.patch(
     "/membership/updateStatus/:id",
