@@ -24,6 +24,23 @@ const checkToken = (token) => {
     }
 };
 
+const getLoggedUserId = async (req, res) => {
+    const token = req.headers.authorization?.split(" ")[1];
+
+    if (!token) {
+        return res.status(401).json({ message: "Token não fornecido" });
+    }
+    try {
+        const decoded = jwt.verify(token, SECRET ?? "S3T1N3L3L4");
+
+        userId = decoded.id;
+    } catch (err) {
+        console.log(err);
+        return -1;
+    }
+    return userId;
+};
+
 const tokenValidation = (req, res, next) => {
     const authHeader = req.headers["authorization"];
     const token = authHeader && authHeader.split(" ")[1]; // Separa ---> 'Bearer <token>'
@@ -49,5 +66,6 @@ module.exports = {
     generateToken,
     checkToken,
     tokenValidation,
+    getLoggedUserId,
     generateRecoveryPasswordToken,
 };

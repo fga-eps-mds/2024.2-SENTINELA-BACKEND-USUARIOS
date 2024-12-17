@@ -6,6 +6,9 @@ const Token = require("../Models/tokenSchema");
 const { generateRecoveryPasswordToken } = require("../Utils/token");
 const saltRounds = 13;
 const Role = require("../Models/roleSchema");
+const TokenFunctions = require("../Utils/token");
+const jwt = require("jsonwebtoken");
+const { SECRET } = process.env;
 
 const createMembershipForm = async (req, res) => {
     try {
@@ -79,6 +82,35 @@ const getMembershipForm = async (req, res) => {
         return res.status(200).send(membership);
     } catch (error) {
         console.error("Erro no getMembershipForm:", error);
+        return res.status(400).send({ error: error.message });
+    }
+};
+
+const getLoggedMembershipForm = async (req, res) => {
+    try {
+        const sindRole = await Role.findOne({ name: "sindicalizado" });
+
+        if (!sindRole) {
+            console.error('Role "sindicalizado" não encontrada.');
+
+            return res
+                .status(404)
+                .send({ error: 'Role "sindicalizado" não encontrada.' });
+        }
+
+        const userId = await TokenFunctions.getLoggedUserId(req, res);
+
+        const { status } = req.query;
+        const query = {
+            role: sindRole._id,
+            _id: userId,
+            ...(status && { status }), // Adiciona status apenas se existir
+        };
+
+        const membership = await Membership.findOne(query);
+        return res.status(200).send(membership);
+    } catch (error) {
+        console.error("Erro no getLoggedMembershipForm:", error);
         return res.status(400).send({ error: error.message });
     }
 };
@@ -178,6 +210,7 @@ const updateMembership = async (req, res) => {
 module.exports = {
     createMembershipForm,
     getMembershipForm,
+    getLoggedMembershipForm,
     deleteMembershipForm,
     updateStatusMembership,
     getMembershipById,
