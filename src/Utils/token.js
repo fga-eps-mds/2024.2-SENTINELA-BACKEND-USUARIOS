@@ -41,9 +41,8 @@ const getLoggedUserId = async (req, res) => {
     return userId;
 };
 
-
 const getLoggedUser = async (req, res) => {
-    const userId = await getLoggedUserId(req,res); 
+    const userId = await getLoggedUserId(req, res);
     try {
         const user = await User.findById(userId).populate("role");
         if (!user) {
@@ -57,7 +56,6 @@ const getLoggedUser = async (req, res) => {
             .send({ message: error.message || "Erro interno no servidor" });
     }
 };
-
 
 const tokenValidation = (req, res, next) => {
     const authHeader = req.headers["authorization"];

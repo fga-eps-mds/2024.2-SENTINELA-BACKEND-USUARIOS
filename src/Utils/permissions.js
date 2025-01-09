@@ -14,20 +14,20 @@ async function checkPermissions(req, res, next) {
             const permission = user.role.permissions.find(
                 (p) => p.module === moduleName
             );
-    
+
             const has = permission && permission.access.includes(action);
-    
+
             if (!has) {
                 return res.status(403).json({
                     mensagem: "Usuário não possui permissão.",
                 });
             }
-    
+
             next();
         } catch (err) {
             console.erro(err);
         }
-    }
+    };
 }
 
 module.exports = { checkPermissions };

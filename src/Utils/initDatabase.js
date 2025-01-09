@@ -27,12 +27,17 @@ const initializeRoles = async () => {
         { name: "read", description: "Permission to read resources" },
         { name: "update", description: "Permission to update resources" },
         { name: "delete", description: "Permission to delete resources" },
-        { name: "call in the grau", description: "Special permission for privileged actions" },
+        {
+            name: "call in the grau",
+            description: "Special permission for privileged actions",
+        },
     ];
 
     try {
         for (const permission of permissions) {
-            const existingPermission = await Permission.findOne({ name: permission.name });
+            const existingPermission = await Permission.findOne({
+                name: permission.name,
+            });
             if (!existingPermission) {
                 const newPermission = new Permission(permission); // Directly save the permission object
                 await newPermission.save();
@@ -40,7 +45,7 @@ const initializeRoles = async () => {
             } else {
                 console.log(`Permission '${permission.name}' already exists.`);
             }
-            console.log('kid-abelha')
+            console.log("kid-abelha");
         }
 
         // Check if the Mongoose connection is open
@@ -50,28 +55,30 @@ const initializeRoles = async () => {
                 const permissions = await Permission.find();
 
                 if (!existingRole) {
-                    let permissionsData = []; 
-                    if(role.name == "administrador"){
-                        permissionsData = permissions.map((x) => {return x._id})
+                    let permissionsData = [];
+                    if (role.name == "administrador") {
+                        permissionsData = permissions.map((x) => {
+                            return x._id;
+                        });
+                    } else {
+                        permissionsData = [];
                     }
-                    else{
-                        permissionsData = []
-                    }
-                    const newRole = new Role({...role, permissions: permissionsData }); // Directly save the role object
+                    const newRole = new Role({
+                        ...role,
+                        permissions: permissionsData,
+                    }); // Directly save the role object
                     await newRole.save();
                     console.log(`Role '${role.name}' created.`);
                 } else {
                     console.log(`Role '${role.name}' already exists.`);
                 }
             }
-
         } else {
             console.error("Mongoose connection is not open");
         }
     } catch (err) {
         console.error("Error initializing permissions:", err);
     }
-
 
     try {
         // Verificar se a conexão está aberta antes de executar
