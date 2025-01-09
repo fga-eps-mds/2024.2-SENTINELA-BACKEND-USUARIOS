@@ -7,8 +7,6 @@ const { generateRecoveryPasswordToken } = require("../Utils/token");
 const saltRounds = 13;
 const Role = require("../Models/roleSchema");
 const TokenFunctions = require("../Utils/token");
-const jwt = require("jsonwebtoken");
-const { SECRET } = process.env;
 
 const createMembershipForm = async (req, res) => {
     try {

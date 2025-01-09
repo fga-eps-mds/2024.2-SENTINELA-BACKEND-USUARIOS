@@ -2,7 +2,7 @@ const Role = require("../Models/roleSchema");
 const User = require("../Models/userSchema");
 const token = require("../Utils/token");
 
-const checkPermissions = (permissionName, action) => {
+const checkPermissions = (permissionName) => {
     return async (req, res, next) => {
         try {
             userId = await token.getLoggedUserId(req, res);

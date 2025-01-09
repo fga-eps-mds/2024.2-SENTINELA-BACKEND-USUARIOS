@@ -1,7 +1,7 @@
 // const Role = require("../Models/roleSchema");
 const User = require("../Models/userSchema");
 
-async function checkPermissions(req, res, next) {
+async function checkPermissions() {
     return async (req, res, next) => {
         const userId = req.query?.userId;
         const moduleName = req.query?.moduleName;

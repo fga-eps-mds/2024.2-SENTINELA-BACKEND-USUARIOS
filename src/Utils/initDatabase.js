@@ -45,7 +45,6 @@ const initializeRoles = async () => {
             } else {
                 console.log(`Permission '${permission.name}' already exists.`);
             }
-            console.log("kid-abelha");
         }
 
         // Check if the Mongoose connection is open
