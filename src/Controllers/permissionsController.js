@@ -69,10 +69,43 @@ const deletePermissionById = async (req, res) => {
     }
 };
 
+// Controlador para buscar permissões pelo nome
+const searchPermissionByName = async (req, res) => {
+    const { name } = req.body;
+
+    if (!name) {
+        return res
+            .status(400)
+            .json({ message: "O parâmetro 'name' é obrigatório." });
+    }
+
+    try {
+        // Busca permissões que contenham o nome fornecido (case-insensitive)
+        const permissions = await Permission.find({
+            name: { $regex: name, $options: "i" },
+        });
+
+        if (permissions.length === 0) {
+            return res
+                .status(404)
+                .json({ message: "Nenhuma permissão encontrada." });
+        }
+
+        return res.status(200).json(permissions);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+            message: "Erro ao buscar permissões.",
+            error: error.message,
+        });
+    }
+};
+
 module.exports = {
     createPermission,
     getAllPermissions,
     getPermissionById,
     updatePermissionById,
     deletePermissionById,
+    searchPermissionByName,
 };

@@ -30,6 +30,10 @@ routes.get("/role", RoleController.getAllRoles);
 routes.get("/role/:id", RoleController.getRoleById);
 routes.patch("/role/patch/:id", RoleController.updateRoleById);
 routes.delete("/role/delete/:id", RoleController.deleteRoleById);
+routes.put(
+    "/roles/:roleId/permissions",
+    RoleController.assignPermissionsToRole
+);
 
 // Permissions Routes
 routes.post(
@@ -57,6 +61,7 @@ routes.delete(
     [tokenValidation],
     permissionController.deletePermissionById
 );
+routes.get("/permissions/search", permissionController.searchPermissionByName);
 
 // --organ
 routes.post("/organ/create", OrganController.createOrgan);

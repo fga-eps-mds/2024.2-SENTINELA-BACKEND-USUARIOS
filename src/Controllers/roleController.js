@@ -1,4 +1,5 @@
 const Role = require("../Models/roleSchema");
+const Permission = require("../Models/permissionsSchema");
 
 const createRole = async (req, res) => {
     try {
@@ -21,7 +22,7 @@ const getAllRoles = async (req, res) => {
 
 const getRoleById = async (req, res) => {
     try {
-        const role = await Role.findById(req.params.id);
+        const role = await Role.findById(req.params.id).populate("permissions");
         if (!role) {
             return res.status(404).json({ message: "Role not found" });
         }
@@ -70,10 +71,47 @@ const deleteRoleById = async (req, res) => {
     }
 };
 
+const assignPermissionsToRole = async (req, res) => {
+    const { roleId } = req.params;
+    const { permissions } = req.body;
+
+    try {
+        const role = await Role.findById(roleId);
+        if (!role) {
+            return res.status(404).json({ message: "Role não encontrada" });
+        }
+
+        const validPermissions = await Permission.find({
+            _id: { $in: permissions },
+        });
+
+        if (validPermissions.length !== permissions.length) {
+            return res.status(400).json({
+                message: "Uma ou mais permissões fornecidas não existem",
+            });
+        }
+
+        role.permissions = permissions;
+        await role.save();
+
+        return res.status(200).json({
+            message: "Permissões atribuídas com sucesso",
+            role,
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+            message: "Erro ao atribuir permissões à role",
+            error: error.message,
+        });
+    }
+};
+
 module.exports = {
     createRole,
     getAllRoles,
     getRoleById,
     updateRoleById,
     deleteRoleById,
+    assignPermissionsToRole,
 };
