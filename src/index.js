@@ -1,3 +1,4 @@
+// import { RBAC } from 'rbac';
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -5,6 +6,7 @@ const routes = require("./routes");
 const initializeRoles = require("./Utils/initDatabase");
 
 const app = express();
+
 
 const { NODE_ENV, OFFICIAL_MONGO_URI, MONGO_URI, PORT, FRONT_HOST } =
     process.env;

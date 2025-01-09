@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const Role = require("../Models/roleSchema"); // Ajuste o caminho conforme necessário
 const User = require("../Models/userSchema");
 const bcrypt = require("bcryptjs");
+const Permission = require("../Models/permissionsSchema");
 
 const salt = bcrypt.genSaltSync();
 
@@ -10,69 +11,67 @@ const initializeRoles = async () => {
     const roles = [
         {
             name: "administrador",
-            permissions: [
-                {
-                    module: "users",
-                    access: ["create", "read", "update", "delete"],
-                },
-                {
-                    module: "finance",
-                    access: ["create", "read", "update", "delete"],
-                },
-                {
-                    module: "benefits",
-                    access: ["create", "read", "update", "delete"],
-                },
-                {
-                    module: "juridic",
-                    access: ["create", "read", "update", "delete"],
-                },
-            ],
             isProtected: true,
         },
         {
             name: "sindicalizado",
-            permissions: [
-                {
-                    module: "basic",
-                    access: ["create", "read", "update", "delete"],
-                },
-            ],
             isProtected: true,
         },
         {
             name: "Usuário",
-            permissions: [
-                {
-                    module: "users",
-                    access: ["read"],
-                },
-            ],
             isProtected: true,
         },
     ];
+    const permissions = [
+        { name: "create", description: "Permission to create resources" },
+        { name: "read", description: "Permission to read resources" },
+        { name: "update", description: "Permission to update resources" },
+        { name: "delete", description: "Permission to delete resources" },
+        { name: "call in the grau", description: "Special permission for privileged actions" },
+    ];
 
     try {
-        // Verificar se a conexão está aberta antes de executar
+        for (const permission of permissions) {
+            const existingPermission = await Permission.findOne({ name: permission.name });
+            if (!existingPermission) {
+                const newPermission = new Permission(permission); // Directly save the permission object
+                await newPermission.save();
+                console.log(`Permission '${permission.name}' created.`);
+            } else {
+                console.log(`Permission '${permission.name}' already exists.`);
+            }
+            console.log('kid-abelha')
+        }
+
+        // Check if the Mongoose connection is open
         if (mongoose.connection.readyState === 1) {
-            for (const roleData of roles) {
-                const existingRole = await Role.findOne({
-                    name: roleData.name,
-                });
+            for (const role of roles) {
+                const existingRole = await Role.findOne({ name: role.name });
+                const permissions = await Permission.find();
+
                 if (!existingRole) {
-                    const role = new Role(roleData);
-                    await role.save();
-                    console.log(`Role ${roleData.name} created`);
+                    let permissionsData = []; 
+                    if(role.name == "administrador"){
+                        permissionsData = permissions.map((x) => {return x._id})
+                    }
+                    else{
+                        permissionsData = []
+                    }
+                    const newRole = new Role({...role, permissions: permissionsData }); // Directly save the role object
+                    await newRole.save();
+                    console.log(`Role '${role.name}' created.`);
                 } else {
-                    console.log(`Role ${roleData.name} already exists`);
+                    console.log(`Role '${role.name}' already exists.`);
                 }
             }
+
         } else {
             console.error("Mongoose connection is not open");
         }
     } catch (err) {
-        console.error("Error initializing roles:", err);
+        console.error("Error initializing permissions:", err);
     }
+
 
     try {
         // Verificar se a conexão está aberta antes de executar

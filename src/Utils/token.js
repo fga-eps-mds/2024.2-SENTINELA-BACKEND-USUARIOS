@@ -41,6 +41,24 @@ const getLoggedUserId = async (req, res) => {
     return userId;
 };
 
+
+const getLoggedUser = async (req, res) => {
+    const userId = await getLoggedUserId(req,res); 
+    try {
+        const user = await User.findById(userId).populate("role");
+        if (!user) {
+            return res.status(404).send();
+        }
+        return user;
+    } catch (error) {
+        // return res.status(500).send(error);
+        return res
+            .status(500)
+            .send({ message: error.message || "Erro interno no servidor" });
+    }
+};
+
+
 const tokenValidation = (req, res, next) => {
     const authHeader = req.headers["authorization"];
     const token = authHeader && authHeader.split(" ")[1]; // Separa ---> 'Bearer <token>'
@@ -67,5 +85,6 @@ module.exports = {
     checkToken,
     tokenValidation,
     getLoggedUserId,
+    getLoggedUser,
     generateRecoveryPasswordToken,
 };

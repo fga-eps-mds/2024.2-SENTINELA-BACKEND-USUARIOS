@@ -8,6 +8,9 @@ const { tokenValidation } = require("./Utils/token");
 const MembershipForm = require("./Controllers/membershipController");
 const TokenController = require("./Controllers/tokenController");
 const OrganController = require("./Controllers/organController");
+const permissionController = require("./Controllers/permissionsController");
+const checkPermissions = require("./Middlewares/accessControlMiddleware");
+
 
 //// Private Routes
 // --user
@@ -19,11 +22,22 @@ routes.delete("/users/delete/:id", tokenValidation, UserController.deleteUser);
 routes.put("/user", tokenValidation, UserController.update);
 
 // --roles
+routes.get("/teste-permission", checkPermissions('read'), async (req, res) =>{
+    return res.status(200).send('has permission');
+});
+
 routes.post("/role/create", RoleController.createRole);
 routes.get("/role", RoleController.getAllRoles);
 routes.get("/role/:id", RoleController.getRoleById);
 routes.patch("/role/patch/:id", RoleController.updateRoleById);
 routes.delete("/role/delete/:id", RoleController.deleteRoleById);
+
+// Permissions Routes
+routes.post("/permission/create", [tokenValidation], permissionController.createPermission);
+routes.get("/permission",[tokenValidation],  permissionController.getAllPermissions);
+routes.get("/permission/:id",[tokenValidation],  permissionController.getPermissionById);
+routes.patch("/permission/patch/:id", [tokenValidation], permissionController.updatePermissionById);
+routes.delete("/permission/delete/:id", [tokenValidation], permissionController.deletePermissionById);
 
 // --organ
 routes.post("/organ/create", OrganController.createOrgan);
