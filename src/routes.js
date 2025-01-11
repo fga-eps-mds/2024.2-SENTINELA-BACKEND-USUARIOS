@@ -38,12 +38,12 @@ routes.put(
 // Permissions Routes
 routes.post(
     "/permission/create",
-    [tokenValidation],
+    //[tokenValidation],
     permissionController.createPermission
 );
 routes.get(
     "/permission",
-    [tokenValidation],
+    //[tokenValidation],
     permissionController.getAllPermissions
 );
 routes.get(
@@ -61,7 +61,7 @@ routes.delete(
     [tokenValidation],
     permissionController.deletePermissionById
 );
-routes.get("/permissions/search", permissionController.searchPermissionByName);
+routes.post("/permission/search", permissionController.searchPermissionByName);
 
 // --organ
 routes.post("/organ/create", OrganController.createOrgan);
