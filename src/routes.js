@@ -98,6 +98,7 @@ routes.delete(
     checkPermissions("permissoes_deletar"),
     permissionController.deletePermissionById
 );
+
 routes.get(
     "/permissions/search",
     checkPermissions("permissoes_visualizar"),
@@ -174,84 +175,5 @@ routes.post("/users/recover-password", UserController.recoverPassword);
 routes.post("/verify-token", TokenController.getToken);
 routes.patch("/users/change-password/:id", UserController.changePassword);
 routes.patch("/users/renew-password", UserController.changePasswordInProfile);
-
-// --user
-// routes.get("/users",  UserController.getUsers);
-// routes.get("/users/:id",  UserController.getUserById);
-// routes.get("/user",  UserController.getLoggedUser);
-// routes.patch("/users/patch/:id",  UserController.patchUser);
-// routes.delete("/users/delete/:id",  UserController.deleteUser);
-// routes.put("/user",  UserController.update);
-
-// // --roles
-// routes.get("/teste-permission", checkPermissions("read"), async (req, res) => {
-//     return res.status(200).send("has permission");
-// });
-
-// routes.post("/role/create", RoleController.createRole);
-// routes.get("/role", RoleController.getAllRoles);
-// routes.get("/role/:id", RoleController.getRoleById);
-// routes.patch("/role/patch/:id", RoleController.updateRoleById);
-// routes.delete("/role/delete/:id", RoleController.deleteRoleById);
-// routes.put(
-//     "/roles/:roleId/permissions",
-//     RoleController.assignPermissionsToRole
-// );
-
-// // Permissions Routes
-// routes.post(
-//     "/permission/create",
-//     permissionController.createPermission
-// );
-// routes.get(
-//     "/permission",
-//     permissionController.getAllPermissions
-// );
-// routes.get(
-//     "/permission/:id",
-//     permissionController.getPermissionById
-// );
-// routes.patch(
-//     "/permission/patch/:id",
-//     permissionController.updatePermissionById
-// );
-// routes.delete(
-//     "/permission/delete/:id",
-//     permissionController.deletePermissionById
-// );
-// routes.get("/permissions/search", permissionController.searchPermissionByName);
-
-// // --organ
-// routes.post("/organ/create", OrganController.createOrgan);
-// routes.get("/organ/list", OrganController.listOrgans);
-// routes.patch("/organ/update/:id", OrganController.updateOrgan);
-// routes.get("/organ/get/:id", OrganController.getOrganById);
-// routes.delete("/organ/delete/:id", OrganController.deleteOrganById);
-
-// //// Public Routes (No token required)
-// // --user and memberShip
-// routes.post("/signup", UserController.signUp);
-// routes.post("/login", UserController.login);
-// routes.post("/users/recover-password", UserController.recoverPassword);
-// routes.post("/verify-token", TokenController.getToken);
-// routes.patch("/users/change-password/:id", UserController.changePassword);
-// routes.patch(
-//     "/users/renew-password",
-//
-//     UserController.changePasswordInProfile
-// );
-
-// //
-// routes.post("/membership/create", MembershipForm.createMembershipForm);
-// routes.get("/membership", MembershipForm.getMembershipForm);
-// routes.get("/logged-membership", MembershipForm.getLoggedMembershipForm);
-
-// routes.delete("/membership/delete/:id", MembershipForm.deleteMembershipForm);
-// routes.patch(
-//     "/membership/updateStatus/:id",
-//     MembershipForm.updateStatusMembership
-// );
-// routes.patch("/membership/update/:id", MembershipForm.updateMembership);
-// routes.get("/membership/:id", MembershipForm.getMembershipById);
 
 module.exports = routes;
