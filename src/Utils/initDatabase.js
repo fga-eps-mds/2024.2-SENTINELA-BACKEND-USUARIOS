@@ -27,9 +27,135 @@ const initializeRoles = async () => {
         { name: "read", description: "Permission to read resources" },
         { name: "update", description: "Permission to update resources" },
         { name: "delete", description: "Permission to delete resources" },
+
+        { name: "usuarios_criar", description: "Permission to create users" },
+        { name: "usuarios_editar", description: "Permission to update users" },
+        { name: "usuarios_deletar", description: "Permission to delete users" },
         {
-            name: "call in the grau",
-            description: "Special permission for privileged actions",
+            name: "usuarios_visualizar",
+            description: "Permission to read users",
+        },
+
+        { name: "perfis_criar", description: "Permission to create profiles" },
+        { name: "perfis_editar", description: "Permission to update profiles" },
+        {
+            name: "perfis_deletar",
+            description: "Permission to delete profiles",
+        },
+        {
+            name: "perfis_visualizar",
+            description: "Permission to read profiles",
+        },
+
+        {
+            name: "orgaos_criar",
+            description: "Permission to create organizations",
+        },
+        {
+            name: "orgaos_editar",
+            description: "Permission to update organizations",
+        },
+        {
+            name: "orgaos_deletar",
+            description: "Permission to delete organizations",
+        },
+        {
+            name: "orgaos_visualizar",
+            description: "Permission to read organizations",
+        },
+
+        {
+            name: "fornecedores_criar",
+            description: "Permission to create suppliers",
+        },
+        {
+            name: "fornecedores_editar",
+            description: "Permission to update suppliers",
+        },
+        {
+            name: "fornecedores_deletar",
+            description: "Permission to delete suppliers",
+        },
+        {
+            name: "fornecedores_visualizar",
+            description: "Permission to read suppliers",
+        },
+
+        {
+            name: "contas_bancarias_criar",
+            description: "Permission to create bank accounts",
+        },
+        {
+            name: "contas_bancarias_editar",
+            description: "Permission to update bank accounts",
+        },
+        {
+            name: "contas_bancarias_deletar",
+            description: "Permission to delete bank accounts",
+        },
+        {
+            name: "contas_bancarias_visualizar",
+            description: "Permission to read bank accounts",
+        },
+
+        {
+            name: "movimentacao_financeira_criar",
+            description: "Permission to create financial transactions",
+        },
+        {
+            name: "movimentacao_financeira_editar",
+            description: "Permission to update financial transactions",
+        },
+        {
+            name: "movimentacao_financeira_deletar",
+            description: "Permission to delete financial transactions",
+        },
+        {
+            name: "movimentacao_financeira_visualizar",
+            description: "Permission to read financial transactions",
+        },
+
+        {
+            name: "permissoes_criar",
+            description: "Permission to create permissions",
+        },
+        {
+            name: "permissoes_editar",
+            description: "Permission to update permissions",
+        },
+        {
+            name: "permissoes_deletar",
+            description: "Permission to delete permissions",
+        },
+        {
+            name: "permissoes_visualizar",
+            description: "Permission to read permissions",
+        },
+
+        {
+            name: "beneficios_criar",
+            description: "Permission to create benefits",
+        },
+        {
+            name: "beneficios_editar",
+            description: "Permission to update benefits",
+        },
+        {
+            name: "beneficios_deletar",
+            description: "Permission to delete benefits",
+        },
+        {
+            name: "beneficios_visualizar",
+            description: "Permission to read benefits",
+        },
+
+        { name: "perfis_criar", description: "Permission to create roles" },
+        { name: "perfis_editar", description: "Permission to update roles" },
+        { name: "perfis_deletar", description: "Permission to delete roles" },
+        { name: "perfis_visualizar", description: "Permission to read roles" },
+        {
+            name: "permissoes_visualizar",
+            description: "Permission to search permissions",
         },
     ];
 
