@@ -9,7 +9,7 @@ const MembershipForm = require("./Controllers/membershipController");
 const TokenController = require("./Controllers/tokenController");
 const OrganController = require("./Controllers/organController");
 const permissionController = require("./Controllers/permissionsController");
-const checkPermissions = require("./Middlewares/accessControlMiddleware");
+const { checkPermissions } = require("./Middlewares/accessControlMiddleware");
 
 //// Private Routes
 // Users Routes
@@ -168,6 +168,10 @@ routes.get(
     checkPermissions("beneficios_visualizar"),
     MembershipForm.getMembershipById
 );
+
+routes.get("/teste", checkPermissions("arriba"), async (req, res) => {
+    return res.status(200).send("teste");
+});
 
 routes.post("/signup", UserController.signUp);
 routes.post("/login", UserController.login);

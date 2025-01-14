@@ -3,8 +3,10 @@ require("dotenv").config();
 
 const { SECRET } = process.env;
 
-const generateToken = (user_id) => {
-    const token = jwt.sign({ id: user_id }, SECRET, { expiresIn: "50d" }); // Token expira em 30 dias
+const generateToken = (user_id, permissions) => {
+    const token = jwt.sign({ id: user_id, ...permissions }, SECRET, {
+        expiresIn: "30d",
+    }); // Token expira em 30 dias
     return token;
 };
 
