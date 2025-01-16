@@ -1,23 +1,13 @@
-const Role = require("../Models/roleSchema");
-const User = require("../Models/userSchema");
-const token = require("../Utils/token");
+const jwt = require("jsonwebtoken");
 
 const checkPermissions = (permissionName) => {
     return async (req, res, next) => {
         try {
-            userId = await token.getLoggedUserId(req, res);
-
-            const user = await User.findById(userId).populate("role");
-
-            if (!user) {
-                return res.status(404).send();
-            }
-
-            const role = await Role.findOne({ name: user.role.name }).populate(
-                "permissions"
+            const decoded = jwt.decode(
+                req.headers.authorization?.split(" ")[1]
             );
 
-            const permission = role.permissions.find(
+            const permission = decoded._doc.permissions.find(
                 (perm) => perm.name === permissionName
             );
 
@@ -26,12 +16,11 @@ const checkPermissions = (permissionName) => {
                     .status(400)
                     .send("user has no permission to access resource");
             }
-            console.log(permission);
             next();
-        } catch (err) {
-            next(err);
+        } catch (error) {
+            next(error);
         }
     };
 };
 
-module.exports = checkPermissions;
+module.exports = { checkPermissions };

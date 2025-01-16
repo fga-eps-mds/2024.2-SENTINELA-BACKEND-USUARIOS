@@ -10,6 +10,7 @@ const {
 const { sendEmail } = require("../Utils/email");
 const generator = require("generate-password");
 const Token = require("../Models/tokenSchema");
+const Role = require("../Models/roleSchema");
 
 const salt = bcrypt.genSaltSync();
 
@@ -78,7 +79,6 @@ const login = async (req, res) => {
     try {
         if (typeof email == "string") {
             const user = await User.findOne({ email: email, status: true });
-
             if (!user) {
                 return res
                     .status(400)
@@ -89,7 +89,11 @@ const login = async (req, res) => {
                     .send({ error: "Email ou senha inválidos." });
             }
 
-            const token = generateToken(user._id);
+            const roles_permissions = await Role.findOne({
+                _id: user.role._id,
+            }).populate("permissions");
+
+            const token = generateToken(user._id, roles_permissions);
 
             return res.status(200).json({
                 token,
