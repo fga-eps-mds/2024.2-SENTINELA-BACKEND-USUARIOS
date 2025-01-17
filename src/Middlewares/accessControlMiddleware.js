@@ -7,8 +7,8 @@ const checkPermissions = (permissionName) => {
                 req.headers.authorization?.split(" ")[1]
             );
 
-            const permission = decoded._doc.permissions.find(
-                (perm) => perm.name === permissionName
+            const permission = decoded.permissions.find(
+                (perm) => perm === permissionName
             );
 
             if (!permission) {

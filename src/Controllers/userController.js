@@ -93,11 +93,19 @@ const login = async (req, res) => {
                 _id: user.role._id,
             }).populate("permissions");
 
-            const token = generateToken(user._id, roles_permissions);
+            roles_permissions_data = {
+                _id: roles_permissions._id,
+                name: roles_permissions.name,
+                permissions: [
+                    ...roles_permissions._doc.permissions.map(x => {return x.name})
+                ]
+            }
+            const token = generateToken(user._id, roles_permissions_data);
 
             return res.status(200).json({
                 token,
                 user,
+                permissions: roles_permissions._doc.permissions.map(x => {return x.name})
             });
         } else {
             return res.status(500).send({ error: "Tipo de dado incorreto" });
