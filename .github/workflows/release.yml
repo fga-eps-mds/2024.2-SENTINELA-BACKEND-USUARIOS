@@ -1,46 +1,57 @@
-name: backend-usuarios-release
+name: Export de métricas
 
-on:
+on: 
   push:
-    branches: [master]
+    branches:
+      - master
+      - devel
     tags:
       - "v*"
   pull_request:
     branches:
       - master
       - devel
-    types: [closed]
+    types: [ closed ]
 
 jobs:
-    generate-release:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v3
+  release:
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'NOT RELEASE') == false
+    runs-on: "ubuntu-latest"
+    environment: actions
+    
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Install dotenv
+        run: pip install python-dotenv packaging pandas
+          
+      - name: Cria arquivo .env
+        run: |
+          touch ./metrics/.env
+          echo GITHUB_TOKEN=${{ secrets.PERSONAL_TOKEN }} >> ./metrics/.env
+          echo RELEASE_MAJOR=${{ contains(github.event.pull_request.labels.*.name, 'MAJOR RELEASE') }} >> ./metrics/.env
+          echo RELEASE_MINOR=${{ contains(github.event.pull_request.labels.*.name, 'MINOR RELEASE') }} >> ./metrics/.env
+          echo RELEASE_FIX=${{ contains(github.event.pull_request.labels.*.name, 'FIX RELEASE') }} >> ./metrics/.env
+          echo DEVELOP=${{ contains(github.event.pull_request.labels.*.name, 'DEVELOP') }} >> ./metrics/.env
+          echo REPO=${{ github.event.repository.name }} >> ./metrics/.env
+          echo REPO_DOC=${{ secrets.GIT_DOC_REPO }} >> ./metrics/.env
 
-            - name: "Get Previous tag"
-              id: previoustag
-              uses: "WyriHaximus/github-action-get-previous-tag@v1"
-              with:
-                  fallback: 1.0.0
+      - name: Criar diretório
+        run: mkdir -p analytics-raw-data
 
-            - name: Use Node.js 16.x
-              uses: actions/setup-node@v3
-              with:
-                  node-version: 16.x
+      - name: Coletar métricas no SonarCloud
+        run: python metrics/sonar-metrics.py ${{ github.event.repository.name }} ${{ github.ref_name }}
 
-            - name: Cria métricas do SonarCloud
-              run: python metrics/sonar-metrics.py ${{ github.event.repository.name }} ${{ github.ref_name }}
-
-            - name: Commita arquivos de métricas do SonarCloud
-              run: |
-                  git config --global user.email "${{ secrets.GIT_EMAIL }}"
-                  git config --global user.name "${{ secrets.GIT_USER }}"
-                  git clone --single-branch --branch main "https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/fga-eps-mds/2024.2-SENTINELA-DOC" doc
-                  mkdir -p doc/analytics-raw-data
-                  cp -R fga-eps-mds*.json doc/analytics-raw-data
-                  cd doc
-                  git add .
-                  git commit -m "Métricas SonarCloud - ${{ github.event.repository.name }} ${{ github.ref_name }}"
-                  git push
-                  echo "Arquivos de métricas gerado com sucesso."
+      - name: Envia métricas para repo de Doc
+        run: |
+          git config --global user.email "${{secrets.GIT_EMAIL}}"
+          git config --global user.name "${{secrets.GIT_USER}}"
+          git clone --single-branch --branch main "https://x-access-token:${{secrets.PERSONAL_TOKEN}}@github.com/fga-eps-mds/2024.2-SENTINELA-DOC" doc
+          mkdir -p doc/analytics-raw-data
+          cp -R analytics-raw-data/*.json doc/analytics-raw-data
+          cd doc
+          git add .
+          git commit -m "Métricas SonarCloud - ${{ github.event.repository.name }} ${{ github.ref_name }}"
+          git push
