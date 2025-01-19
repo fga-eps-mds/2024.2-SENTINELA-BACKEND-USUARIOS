@@ -173,6 +173,22 @@ const initializeRoles = async () => {
             name: "permissoes_visualizar",
             description: "Permission to search permissions",
         },
+        {
+            name: "usuarios_visualizar_historico",
+            description: "Usuário visualiza historico",
+        },
+        {
+            name: "filiados_cadastrar",
+            description: "Cadastrar novo filiado",
+        },
+        {
+            name: "filiado_visualizar_carteirinha",
+            description: "Visualizar carteirinha do filiado",
+        },
+        {
+            name: "sindicalizado_visualizar_status",
+            description: "Verificar status sindicalizado",
+        },
     ];
 
     try {
