@@ -148,6 +148,22 @@ const initializeRoles = async () => {
             name: "beneficios_visualizar",
             description: "Permission to read benefits",
         },
+        {
+            name: "associados_criar",
+            description: "Permission to create membership",
+        },
+        {
+            name: "associados_editar",
+            description: "Permission to update membership",
+        },
+        {
+            name: "associados_deletar",
+            description: "Permission to delete membership",
+        },
+        {
+            name: "associados_visualizar",
+            description: "Permission to read membership",
+        },
 
         { name: "perfis_criar", description: "Permission to create roles" },
         { name: "perfis_editar", description: "Permission to update roles" },

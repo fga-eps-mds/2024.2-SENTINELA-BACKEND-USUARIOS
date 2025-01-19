@@ -135,37 +135,37 @@ routes.delete(
 // Membership Routes
 routes.post(
     "/membership/create",
-    checkPermissions("beneficios_criar"),
+    checkPermissions("associados_criar"),
     MembershipForm.createMembershipForm
 );
 routes.get(
     "/membership",
-    checkPermissions("beneficios_visualizar"),
+    checkPermissions("associados_visualizar"),
     MembershipForm.getMembershipForm
 );
 routes.get(
     "/logged-membership",
-    checkPermissions("beneficios_visualizar"),
+    checkPermissions("associados_visualizar"),
     MembershipForm.getLoggedMembershipForm
 );
 routes.delete(
     "/membership/delete/:id",
-    checkPermissions("beneficios_deletar"),
+    checkPermissions("associados_deletar"),
     MembershipForm.deleteMembershipForm
 );
 routes.patch(
     "/membership/updateStatus/:id",
-    checkPermissions("beneficios_editar"),
+    checkPermissions("associados_editar"),
     MembershipForm.updateStatusMembership
 );
 routes.patch(
     "/membership/update/:id",
-    checkPermissions("beneficios_editar"),
+    checkPermissions("associados_editar"),
     MembershipForm.updateMembership
 );
 routes.get(
     "/membership/:id",
-    checkPermissions("beneficios_visualizar"),
+    checkPermissions("associados_visualizar"),
     MembershipForm.getMembershipById
 );
 
