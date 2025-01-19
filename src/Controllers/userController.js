@@ -104,6 +104,7 @@ const login = async (req, res) => {
             };
             const token = generateToken(user._id, roles_permissions_data);
 
+
             return res.status(200).json({
                 token,
                 user,
