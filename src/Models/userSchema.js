@@ -28,8 +28,14 @@ const userSchema = new mongoose.Schema({
     },
     situation: {
         type: String,
-        default: "OK",
+        default: "",
     },
+
+    description: {
+        type: String,
+        default: "",
+    },
+
     createdAt: {
         type: Date,
         default: Date.now,
