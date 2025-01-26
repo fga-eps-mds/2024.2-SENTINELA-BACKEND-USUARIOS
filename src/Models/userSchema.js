@@ -22,6 +22,16 @@ const userSchema = new mongoose.Schema({
         ref: "Role",
         required: false,
     },
+    situation: {
+        type: String,
+        default: "Pendente",
+    },
+    cancelDate:{
+        type: Date,
+    },
+    justification:{
+        type: String,
+    },
     status: {
         type: Boolean,
         default: false,
