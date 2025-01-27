@@ -113,7 +113,6 @@ routes.post(
 );
 routes.get(
     "/organ/list",
-    checkPermissions("orgaos_visualizar"),
     OrganController.listOrgans
 );
 routes.patch(
@@ -135,7 +134,6 @@ routes.delete(
 // Membership Routes
 routes.post(
     "/membership/create",
-    checkPermissions("associados_criar"),
     MembershipForm.createMembershipForm
 );
 routes.get(
