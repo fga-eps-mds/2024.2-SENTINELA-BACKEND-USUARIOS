@@ -26,10 +26,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "Pendente",
     },
-    cancelDate:{
+    cancelDate: {
         type: Date,
     },
-    justification:{
+    justification: {
         type: String,
     },
     status: {

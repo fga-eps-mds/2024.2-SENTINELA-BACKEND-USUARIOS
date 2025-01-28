@@ -111,10 +111,7 @@ routes.post(
     checkPermissions("orgaos_criar"),
     OrganController.createOrgan
 );
-routes.get(
-    "/organ/list",
-    OrganController.listOrgans
-);
+routes.get("/organ/list", OrganController.listOrgans);
 routes.patch(
     "/organ/update/:id",
     checkPermissions("orgaos_editar"),
@@ -132,10 +129,7 @@ routes.delete(
 );
 
 // Membership Routes
-routes.post(
-    "/membership/create",
-    MembershipForm.createMembershipForm
-);
+routes.post("/membership/create", MembershipForm.createMembershipForm);
 routes.get(
     "/membership",
     checkPermissions("associados_visualizar"),
