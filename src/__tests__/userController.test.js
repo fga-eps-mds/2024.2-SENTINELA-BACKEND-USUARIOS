@@ -60,6 +60,14 @@ beforeAll(async () => {
     });
     deletableUserId = deletableUser._id;
 
+    const res = await request(app).post("/login").send({
+        email: "admin@admin.com",
+        password: "senha",
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.body.user.email).toBe("admin@admin.com");
+
     console.log("Finished beforeAll hook");
 }, 30000);
 
