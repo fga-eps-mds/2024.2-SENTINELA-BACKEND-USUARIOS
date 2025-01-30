@@ -28,28 +28,6 @@ app.use(express.urlencoded({ extended: true }));
 // Rotas
 app.use("/", routes);
 
-const generateRoleData = (suffix) => ({
-    name: `Perfil Teste ${suffix}`,
-    permissions: [
-        {
-            name: "teste_criar",
-            description: "Permission to create",
-        },
-        {
-            name: "teste_editar",
-            description: "Permission to update",
-        },
-        {
-            name: "teste_deletar",
-            description: "Permission to delete",
-        },
-        {
-            name: "teste_visualizar",
-            description: "Permission to read",
-        },
-    ],
-});
-
 describe("RoleController Test Suite", () => {
     let authToken;
 
@@ -147,19 +125,6 @@ describe("RoleController Test Suite", () => {
         authToken = res.body.token;
         userId = res.body.user._id;
     });
-
-    // afterAll(async () => {
-    //     await mongoose.disconnect();
-    //     await mongoServer.stop();
-    // });
-
-    const createRole = async (data) => {
-        const response = await request(app)
-            .post("/role/create")
-            .set("Authorization", `Bearer ${authToken}`)
-            .send(data);
-        return response;
-    };
 
     it("should create a role", async () => {
         const data = { name: "Admin" };

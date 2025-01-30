@@ -23,8 +23,6 @@ app.use(express.urlencoded({ extended: true }));
 // Rotas
 app.use("/", routes);
 
-let mockJwtToken;
-
 beforeAll(async () => {
     console.log("Starting beforeAll hook");
 
@@ -69,8 +67,6 @@ beforeAll(async () => {
 
     expect(res.status).toBe(200);
     expect(res.body.user.email).toBe("admin@admin.com");
-
-    mockJwtToken = res.body.token;
 
     console.log("Finished beforeAll hook");
 }, 30000);
