@@ -3,8 +3,6 @@ const routes = express.Router();
 const UserController = require("./Controllers/userController");
 const RoleController = require("./Controllers/roleController");
 
-const { tokenValidation } = require("./Utils/token");
-
 const MembershipForm = require("./Controllers/membershipController");
 const TokenController = require("./Controllers/tokenController");
 const OrganController = require("./Controllers/organController");
