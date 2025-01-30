@@ -62,12 +62,9 @@ const generateMembershipData = (suffix) => ({
     },
 });
 
-const createMembership = async (data) => {
-    const response = await request(app).post("/membership/create").send(data);
-    return response;
-};
-
 describe("MembershipController Test Suite", () => {
+    let authToken;
+
     beforeAll(async () => {
         mongoServer = await MongoMemoryServer.create();
         await mongoose.connect(mongoServer.getUri(), {
@@ -76,7 +73,26 @@ describe("MembershipController Test Suite", () => {
         });
 
         await initializeRoles();
+
+        const res = await request(app).post("/login").send({
+            email: "admin@admin.com",
+            password: "senha",
+        });
+
+        expect(res.status).toBe(200);
+        expect(res.body.user.email).toBe("admin@admin.com");
+
+        authToken = res.body.token;
+        userId = res.body.user._id;
     });
+
+    const createMembership = async (data) => {
+        const response = await request(app)
+            .post("/membership/create")
+            .set("Authorization", `Bearer ${authToken}`)
+            .send(data);
+        return response;
+    };
 
     afterAll(async () => {
         await mongoose.disconnect();
@@ -104,7 +120,9 @@ describe("MembershipController Test Suite", () => {
 
     describe("GET /membership", () => {
         it("should retrieve all membership forms", async () => {
-            const response = await request(app).get("/membership");
+            const response = await request(app)
+                .get("/membership")
+                .set("Authorization", `Bearer ${authToken}`);
             expect(response.status).toBe(200);
             expect(response.body).toBeInstanceOf(Array);
         });
@@ -118,18 +136,18 @@ describe("MembershipController Test Suite", () => {
             expect(postResponse.body).toHaveProperty("_id");
 
             const membershipId = postResponse.body._id;
-            const getResponse = await request(app).get(
-                `/membership/${membershipId}`
-            );
+            const getResponse = await request(app)
+                .get(`/membership/${membershipId}`)
+                .set("Authorization", `Bearer ${authToken}`);
 
             expect(getResponse.status).toBe(200);
             expect(getResponse.body).toHaveProperty("_id", membershipId);
         });
         it("should not retrieve a specific membership with invalid ID", async () => {
             const membershipId = "A1";
-            const getResponse = await request(app).get(
-                `/membership/${membershipId}`
-            );
+            const getResponse = await request(app)
+                .get(`/membership/${membershipId}`)
+                .set("Authorization", `Bearer ${authToken}`);
 
             expect(getResponse.status).toBe(500);
         });
@@ -142,9 +160,9 @@ describe("MembershipController Test Suite", () => {
             expect(postResponse.status).toBe(201);
 
             const membershipId = postResponse.body._id;
-            const response = await request(app).patch(
-                `/membership/updateStatus/${membershipId}`
-            );
+            const response = await request(app)
+                .patch(`/membership/updateStatus/${membershipId}`)
+                .set("Authorization", `Bearer ${authToken}`);
 
             expect(response.status).toBe(200);
             expect(response.body).toHaveProperty("_id", membershipId);
@@ -160,9 +178,9 @@ describe("MembershipController Test Suite", () => {
 
         it("should return 404 if membership is not found", async () => {
             const invalidId = "A1"; // Example of an invalid ID
-            const response = await request(app).patch(
-                `/membership/status/${invalidId}`
-            );
+            const response = await request(app)
+                .patch(`/membership/status/${invalidId}`)
+                .set("Authorization", `Bearer ${authToken}`);
 
             expect(response.status).toBe(404);
         });
@@ -184,6 +202,7 @@ describe("MembershipController Test Suite", () => {
 
             const response = await request(app)
                 .patch(`/membership/update/${membershipId}`)
+                .set("Authorization", `Bearer ${authToken}`)
                 .send(updatedData);
 
             expect(response.status).toBe(201);
@@ -200,18 +219,18 @@ describe("MembershipController Test Suite", () => {
             expect(postResponse.status).toBe(201);
             const membershipId = postResponse.body._id;
 
-            const deleteResponse = await request(app).delete(
-                `/membership/delete/${membershipId}`
-            );
+            const deleteResponse = await request(app)
+                .delete(`/membership/delete/${membershipId}`)
+                .set("Authorization", `Bearer ${authToken}`);
             expect(deleteResponse.status).toBe(200);
             expect(deleteResponse.body).toHaveProperty("_id", membershipId);
         });
         it("should not delete a specific membership if ID not found", async () => {
             const membershipId = "A1";
 
-            const deleteResponse = await request(app).delete(
-                `/membership/delete/${membershipId}`
-            );
+            const deleteResponse = await request(app)
+                .delete(`/membership/delete/${membershipId}`)
+                .set("Authorization", `Bearer ${authToken}`);
             expect(deleteResponse.status).toBe(400);
         });
     });

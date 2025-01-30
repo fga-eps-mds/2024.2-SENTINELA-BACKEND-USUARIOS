@@ -23,6 +23,8 @@ app.use(express.urlencoded({ extended: true }));
 // Rotas
 app.use("/", routes);
 
+let mockJwtToken;
+
 beforeAll(async () => {
     console.log("Starting beforeAll hook");
 
@@ -59,6 +61,16 @@ beforeAll(async () => {
         isProtected: false, // Não é protegido
     });
     deletableUserId = deletableUser._id;
+
+    const res = await request(app).post("/login").send({
+        email: "admin@admin.com",
+        password: "senha",
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.body.user.email).toBe("admin@admin.com");
+
+    mockJwtToken = res.body.token;
 
     console.log("Finished beforeAll hook");
 }, 30000);
