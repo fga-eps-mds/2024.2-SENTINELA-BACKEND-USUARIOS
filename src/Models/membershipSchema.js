@@ -197,6 +197,14 @@ const Membership = User.discriminator(
         religion: {
             type: String,
         },
+        situation: {
+            type: String,
+            default: "",
+        },
+        description: {
+            type: String,
+            default: "",
+        },
         dependents: [dependentSchema],
         createdAt: {
             type: Date,
