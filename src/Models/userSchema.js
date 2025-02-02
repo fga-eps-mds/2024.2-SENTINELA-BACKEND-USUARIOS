@@ -36,16 +36,6 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
-    situation: {
-        type: String,
-        default: "",
-    },
-
-    description: {
-        type: String,
-        default: "",
-    },
-
     createdAt: {
         type: Date,
         default: Date.now,
