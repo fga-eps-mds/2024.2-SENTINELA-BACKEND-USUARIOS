@@ -2,7 +2,6 @@ const express = require("express");
 const routes = express.Router();
 const UserController = require("./Controllers/userController");
 const RoleController = require("./Controllers/roleController");
-
 const MembershipForm = require("./Controllers/membershipController");
 const TokenController = require("./Controllers/tokenController");
 const OrganController = require("./Controllers/organController");
@@ -130,7 +129,6 @@ routes.delete(
 routes.post("/membership/create", MembershipForm.createMembershipForm);
 routes.get(
     "/membership",
-    checkPermissions("associados_visualizar"),
     MembershipForm.getMembershipForm
 );
 routes.get(
