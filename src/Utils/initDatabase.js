@@ -103,6 +103,22 @@ const initializeRoles = async () => {
             description: "Permission to create financial transactions",
         },
         {
+            name: "patrimonio_criar",
+            description: "Permission to create asset",
+        },
+        {
+            name: "patrimonio_deletar",
+            description: "Permission to delete asset",
+        },
+        {
+            name: "patrimonio_visualizar",
+            description: "Permission to read asset",
+        },
+        {
+            name: "patrimonio_editar",
+            description: "Permission to update asset",
+        },
+        {
             name: "movimentacao_financeira_editar",
             description: "Permission to update financial transactions",
         },
