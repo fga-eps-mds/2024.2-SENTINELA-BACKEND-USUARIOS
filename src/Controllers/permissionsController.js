@@ -71,6 +71,8 @@ const deletePermissionById = async (req, res) => {
 
 // Controlador para buscar permissões pelo nome
 const searchPermissionByName = async (req, res) => {
+    const escapeRegex = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
     const { name } = req.body;
 
     if (!name) {
@@ -80,6 +82,8 @@ const searchPermissionByName = async (req, res) => {
     }
 
     try {
+        name = escapeRegex(name);
+
         // Busca permissões que contenham o nome fornecido (case-insensitive)
         const permissions = await Permission.find({
             name: { $regex: name, $options: "i" },
