@@ -82,7 +82,7 @@ const searchPermissionByName = async (req, res) => {
     }
 
     try {
-        let safeName = escapeRegex(name)
+        let safeName = escapeRegex(name);
         // Busca permissões que contenham o nome fornecido (case-insensitive)
         const permissions = await Permission.find({
             name: { $regex: safeName, $options: "i" },
