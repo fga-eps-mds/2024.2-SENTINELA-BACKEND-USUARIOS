@@ -188,9 +188,6 @@ const createPermission = async (permission) => {
     if (!existingPermission) {
         const newPermission = new Permission(permission);
         await newPermission.save();
-        console.log(`Permission '${permission.name}' created.`);
-    } else {
-        console.log(`Permission '${permission.name}' already exists.`);
     }
 };
 
@@ -203,10 +200,8 @@ const createRole = async (role, allPermissions) => {
                 : [];
         const newRole = new Role({ ...role, permissions: permissionsData });
         await newRole.save();
-        console.log(`Role '${role.name}' created.`);
         return newRole;
     } else {
-        console.log(`Role '${role.name}' already exists.`);
         return existingRole;
     }
 };
@@ -221,9 +216,6 @@ const createUser = async (userData, roleObj) => {
             role: roleObj._id,
         });
         await user.save();
-        console.log(`User ${userData.name} created successfully.`);
-    } else {
-        console.log(`User ${userData.name} already exists.`);
     }
 };
 
