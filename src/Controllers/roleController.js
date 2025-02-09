@@ -1,5 +1,6 @@
 const Role = require("../Models/roleSchema");
 const Permission = require("../Models/permissionsSchema");
+var sanitize = require("mongo-sanitize");
 
 const createRole = async (req, res) => {
     try {
@@ -82,7 +83,7 @@ const assignPermissionsToRole = async (req, res) => {
         }
 
         const validPermissions = await Permission.find({
-            _id: { $in: permissions },
+            _id: { $in: sanitize(permissions) },
         });
 
         if (validPermissions.length !== permissions.length) {
