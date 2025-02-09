@@ -1,4 +1,5 @@
 const Permission = require("../Models/permissionsSchema");
+const sanitize = require("mongo-sanitize");
 
 // Create a new permission
 const createPermission = async (req, res) => {
@@ -71,8 +72,6 @@ const deletePermissionById = async (req, res) => {
 
 // Controlador para buscar permissões pelo nome
 const searchPermissionByName = async (req, res) => {
-    const escapeRegex = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-
     const { name } = req.body;
 
     if (!name) {
@@ -82,10 +81,9 @@ const searchPermissionByName = async (req, res) => {
     }
 
     try {
-        let safeName = escapeRegex(name);
         // Busca permissões que contenham o nome fornecido (case-insensitive)
         const permissions = await Permission.find({
-            name: { $regex: safeName, $options: "i" },
+            name: { $regex: sanitize(name), $options: "i" },
         });
 
         if (permissions.length === 0) {
