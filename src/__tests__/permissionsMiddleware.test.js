@@ -5,7 +5,6 @@ const cors = require("cors");
 const routes = require("../routes");
 const { MongoMemoryServer } = require("mongodb-memory-server");
 const initializeRoles = require("../Utils/initDatabase");
-const User = require("../Models/userSchema");
 
 const app = express();
 let mongoServer;
@@ -43,7 +42,6 @@ beforeAll(async () => {
     }
     await initializeRoles();
 
-    
     const res = await request(app).post("/login").send({
         email: "admin@admin.com",
         password: "senha",
@@ -70,14 +68,11 @@ describe("User Controller Tests", () => {
         expect(res.status).toBe(401);
     });
 
-    
     it("should return 401 if token is not provided", async () => {
-        const res = await request(app)
-            .get("/users")
+        const res = await request(app).get("/users");
         expect(res.status).toBe(401);
         expect(res.body.mensagem).toBe("Tokem não fornecido.");
     });
-    
 
     test("should grant access if user has permission", async () => {
         const res = await request(app)
