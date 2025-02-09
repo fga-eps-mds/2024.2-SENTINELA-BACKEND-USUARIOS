@@ -23,7 +23,7 @@ const verifyToken = (token) => {
     try {
         return jwt.verify(token, SECRET ?? DEFAULT_SECRET);
     } catch (error) {
-        throw new TokenError("Token inválido ou expirado");
+        throw new TokenError(`Token inválido ou expirado error: ${error}`);
     }
 };
 
@@ -54,6 +54,8 @@ const getLoggedUserId = async (req) => {
         const decoded = verifyToken(token);
         return decoded.id;
     } catch (error) {
+        throw new TokenError(`${error}`);
+
         return -1;
     }
 };
