@@ -2,89 +2,103 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const { SECRET } = process.env;
+const DEFAULT_SECRET = "S3T1N3L3L4";
+
+class TokenError extends Error {
+    constructor(message, statusCode = 401) {
+        super(message);
+        this.statusCode = statusCode;
+    }
+}
+
+const createToken = (payload, expiresIn) => {
+    return jwt.sign(payload, SECRET ?? DEFAULT_SECRET, { expiresIn });
+};
+
+const verifyToken = (token) => {
+    if (!token) {
+        throw new TokenError("Token não fornecido");
+    }
+
+    try {
+        return jwt.verify(token, SECRET ?? DEFAULT_SECRET);
+    } catch (error) {
+        throw new TokenError("Token inválido ou expirado");
+    }
+};
+
+const extractTokenFromHeader = (authHeader) => {
+    if (!authHeader) {
+        throw new TokenError("Token não fornecido");
+    }
+
+    const [bearer, token] = authHeader.split(" ");
+    if (bearer !== "Bearer" || !token) {
+        throw new TokenError("Formato de token inválido");
+    }
+
+    return token;
+};
 
 const generateToken = (user_id, permissions) => {
-    const token = jwt.sign({ id: user_id, ...permissions }, SECRET, {
-        expiresIn: "30d",
-    }); // Token expira em 30 dias
-    return token;
+    return createToken({ id: user_id, ...permissions }, "30d");
 };
 
 const generateRecoveryPasswordToken = (user_id) => {
-    const token = jwt.sign({ id: user_id }, SECRET, { expiresIn: "1d" }); // Token expira em 1 dia
-    return token;
+    return createToken({ id: user_id }, "1d");
 };
 
-const checkToken = (token) => {
+const getLoggedUserId = async (req) => {
     try {
-        const decoded = jwt.verify(token, SECRET);
+        const token = extractTokenFromHeader(req.headers.authorization);
+        const decoded = verifyToken(token);
         return decoded.id;
-    } catch {
-        return res.status(401).json({
-            mensagem: "Token inválido ou expirado.",
-        });
-    }
-};
-
-const getLoggedUserId = async (req, res) => {
-    const token = req.headers.authorization?.split(" ")[1];
-
-    if (!token) {
-        return res.status(401).json({ message: "Token não fornecido" });
-    }
-    try {
-        const decoded = jwt.verify(token, SECRET ?? "S3T1N3L3L4");
-
-        userId = decoded.id;
-    } catch (err) {
-        console.log(err);
+    } catch (error) {
         return -1;
     }
-    return userId;
 };
 
 const getLoggedUser = async (req, res) => {
-    const userId = await getLoggedUserId(req, res);
     try {
+        const userId = await getLoggedUserId(req);
+        if (userId === -1) {
+            throw new TokenError("Usuário não autenticado");
+        }
+
         const user = await User.findById(userId).populate("role");
         if (!user) {
-            return res.status(404).send();
+            throw new TokenError("Usuário não encontrado", 404);
         }
+
         return user;
     } catch (error) {
-        // return res.status(500).send(error);
-        return res
-            .status(500)
-            .send({ message: error.message || "Erro interno no servidor" });
+        const statusCode = error.statusCode || 500;
+        const message = error.statusCode
+            ? error.message
+            : "Erro interno no servidor";
+        return res.status(statusCode).json({ message });
     }
 };
 
 const tokenValidation = (req, res, next) => {
-    const authHeader = req.headers["authorization"];
-    const token = authHeader && authHeader.split(" ")[1]; // Separa ---> 'Bearer <token>'
-
-    if (!token) {
-        return res.status(401).json({ mensagem: "Tokem não fornecido." });
-    }
-
-    jwt.verify(token, SECRET, (err, decoded) => {
-        if (err) {
-            return res.status(401).json({
-                mensagem: "Token inválido ou expirado.",
-            });
-        }
-
+    try {
+        const token = extractTokenFromHeader(req.headers.authorization);
+        const decoded = verifyToken(token);
         req.userId = decoded.id;
-
         next();
-    });
+    } catch (error) {
+        const statusCode = error.statusCode || 500;
+        const message = error.statusCode
+            ? error.message
+            : "Erro interno no servidor";
+        return res.status(statusCode).json({ message });
+    }
 };
 
 module.exports = {
     generateToken,
-    checkToken,
-    tokenValidation,
+    generateRecoveryPasswordToken,
     getLoggedUserId,
     getLoggedUser,
-    generateRecoveryPasswordToken,
+    tokenValidation,
 };
