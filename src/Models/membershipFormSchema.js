@@ -235,6 +235,10 @@ const membershipFormSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    beneficio: {
+        type: String,
+        default: "",
+    },
     dependentes: [dependentSchema],
 });
 const membershipForm = mongoose.model("Membership", membershipFormSchema);
