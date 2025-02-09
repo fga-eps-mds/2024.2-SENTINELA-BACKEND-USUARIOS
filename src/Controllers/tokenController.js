@@ -1,5 +1,6 @@
 const Token = require("../Models/tokenSchema");
 const { checkToken } = require("../Utils/token");
+const sanitize = require("mongo-sanitize");
 
 const getToken = async (req, res) => {
     try {
@@ -9,7 +10,7 @@ const getToken = async (req, res) => {
             return res.status(400).send({ message: "Token não fornecido" });
         }
 
-        const achei = await Token.findOne({ token: token });
+        const achei = await Token.findOne({ token: sanitize(token) });
 
         if (!achei) {
             return res.status(404).send({ message: "Token não encontrado" });
