@@ -1,6 +1,6 @@
 const Role = require("../Models/roleSchema");
 const Permission = require("../Models/permissionsSchema");
-var sanitize = require("mongo-sanitize");
+const sanitize = require("mongo-sanitize");
 
 const createRole = async (req, res) => {
     try {

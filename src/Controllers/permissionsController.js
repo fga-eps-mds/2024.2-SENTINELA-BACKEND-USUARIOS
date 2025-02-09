@@ -1,5 +1,5 @@
 const Permission = require("../Models/permissionsSchema");
-var sanitize = require("mongo-sanitize");
+const sanitize = require("mongo-sanitize");
 
 // Create a new permission
 const createPermission = async (req, res) => {
