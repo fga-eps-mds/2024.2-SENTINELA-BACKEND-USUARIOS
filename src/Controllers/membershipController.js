@@ -194,15 +194,30 @@ const updateMembership = async (req, res) => {
     try {
         const userId = req.params.id;
         const formData = req.body.formData;
+      
+        // Verificar se o CPF está em uso por outro usuário
+        const existingMembershipWithCpf = await Membership.findOne({
+          cpf: formData.cpf,
+          _id: { $ne: userId }, // Ignorar o usuário que está sendo editado
+        });
+        if (existingMembershipWithCpf) {
+          return res.status(400).send({ mensagem: "CPF já cadastrado." });
+        }
+      
+        // Encontrar e atualizar o usuário atual
         const existingMembership = await Membership.findById(userId);
-
+      
+        if (!existingMembership) {
+          return res.status(404).send({ mensagem: "Usuário não encontrado." });
+        }
+      
         Object.assign(existingMembership, formData);
-
+      
         await existingMembership.save();
-        return res.status(201).send(existingMembership);
-    } catch (error) {
+        return res.status(200).send(existingMembership);
+      } catch (error) {
         return res.status(500).send({ error });
-    }
+      }
 };
 
 module.exports = {
