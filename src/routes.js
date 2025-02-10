@@ -127,10 +127,7 @@ routes.delete(
 
 // Membership Routes
 routes.post("/membership/create", MembershipForm.createMembershipForm);
-routes.get(
-    "/membership",
-    MembershipForm.getMembershipForm
-);
+routes.get("/membership", MembershipForm.getMembershipForm);
 routes.get(
     "/logged-membership",
     checkPermissions("associados_visualizar"),

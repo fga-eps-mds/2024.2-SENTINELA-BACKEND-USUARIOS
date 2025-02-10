@@ -1,4 +1,5 @@
 const Permission = require("../Models/permissionsSchema");
+const sanitize = require("mongo-sanitize");
 
 // Create a new permission
 const createPermission = async (req, res) => {
@@ -82,7 +83,7 @@ const searchPermissionByName = async (req, res) => {
     try {
         // Busca permissões que contenham o nome fornecido (case-insensitive)
         const permissions = await Permission.find({
-            name: { $regex: name, $options: "i" },
+            name: { $regex: sanitize(name), $options: "i" },
         });
 
         if (permissions.length === 0) {

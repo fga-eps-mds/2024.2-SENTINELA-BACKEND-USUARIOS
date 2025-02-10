@@ -1,329 +1,264 @@
-// ./utils/initRoles.js
 const mongoose = require("mongoose");
-const Role = require("../Models/roleSchema"); // Ajuste o caminho conforme necessário
+const Role = require("../Models/roleSchema");
 const User = require("../Models/userSchema");
 const bcrypt = require("bcryptjs");
 const Permission = require("../Models/permissionsSchema");
 
 const salt = bcrypt.genSaltSync();
 
-const initializeRoles = async () => {
-    const roles = [
-        {
-            name: "administrador",
-            isProtected: true,
-        },
-        {
-            name: "sindicalizado",
-            isProtected: true,
-        },
-        {
-            name: "Usuário",
-            isProtected: true,
-        },
-    ];
-    const permissions = [
-        { name: "create", description: "Permission to create resources" },
-        { name: "read", description: "Permission to read resources" },
-        { name: "update", description: "Permission to update resources" },
-        { name: "delete", description: "Permission to delete resources" },
+const roles = [
+    { name: "administrador", isProtected: true },
+    { name: "sindicalizado", isProtected: true },
+    { name: "Usuário", isProtected: true },
+];
 
-        { name: "usuarios_criar", description: "Permission to create users" },
-        { name: "usuarios_editar", description: "Permission to update users" },
-        { name: "usuarios_deletar", description: "Permission to delete users" },
-        {
-            name: "usuarios_visualizar",
-            description: "Permission to read users",
-        },
+const permissions = [
+    { name: "create", description: "Permission to create resources" },
+    { name: "read", description: "Permission to read resources" },
+    { name: "update", description: "Permission to update resources" },
+    { name: "delete", description: "Permission to delete resources" },
+    // User permissions
+    { name: "usuarios_criar", description: "Permission to create users" },
+    { name: "usuarios_editar", description: "Permission to update users" },
+    { name: "usuarios_deletar", description: "Permission to delete users" },
+    { name: "usuarios_visualizar", description: "Permission to read users" },
+    {
+        name: "usuarios_visualizar_historico",
+        description: "Usuário visualiza historico",
+    },
+    // Profile permissions
+    { name: "perfis_criar", description: "Permission to create profiles" },
+    { name: "perfis_editar", description: "Permission to update profiles" },
+    { name: "perfis_deletar", description: "Permission to delete profiles" },
+    { name: "perfis_visualizar", description: "Permission to read profiles" },
+    // Organization permissions
+    { name: "orgaos_criar", description: "Permission to create organizations" },
+    {
+        name: "orgaos_editar",
+        description: "Permission to update organizations",
+    },
+    {
+        name: "orgaos_deletar",
+        description: "Permission to delete organizations",
+    },
+    {
+        name: "orgaos_visualizar",
+        description: "Permission to read organizations",
+    },
+    // Supplier permissions
+    {
+        name: "fornecedores_criar",
+        description: "Permission to create suppliers",
+    },
+    {
+        name: "fornecedores_editar",
+        description: "Permission to update suppliers",
+    },
+    {
+        name: "fornecedores_deletar",
+        description: "Permission to delete suppliers",
+    },
+    {
+        name: "fornecedores_visualizar",
+        description: "Permission to read suppliers",
+    },
+    // Bank account permissions
+    {
+        name: "contas_bancarias_criar",
+        description: "Permission to create bank accounts",
+    },
+    {
+        name: "contas_bancarias_editar",
+        description: "Permission to update bank accounts",
+    },
+    {
+        name: "contas_bancarias_deletar",
+        description: "Permission to delete bank accounts",
+    },
+    {
+        name: "contas_bancarias_visualizar",
+        description: "Permission to read bank accounts",
+    },
+    // Financial transaction permissions
+    {
+        name: "movimentacao_financeira_criar",
+        description: "Permission to create financial transactions",
+    },
+    {
+        name: "movimentacao_financeira_editar",
+        description: "Permission to update financial transactions",
+    },
+    {
+        name: "movimentacao_financeira_deletar",
+        description: "Permission to delete financial transactions",
+    },
+    {
+        name: "movimentacao_financeira_visualizar",
+        description: "Permission to read financial transactions",
+    },
+    // Permission management
+    {
+        name: "permissoes_criar",
+        description: "Permission to create permissions",
+    },
+    {
+        name: "permissoes_editar",
+        description: "Permission to update permissions",
+    },
+    {
+        name: "permissoes_deletar",
+        description: "Permission to delete permissions",
+    },
+    {
+        name: "permissoes_visualizar",
+        description: "Permission to read permissions",
+    },
+    // Benefits permissions
+    { name: "beneficios_criar", description: "Permission to create benefits" },
+    { name: "beneficios_editar", description: "Permission to update benefits" },
+    {
+        name: "beneficios_deletar",
+        description: "Permission to delete benefits",
+    },
+    {
+        name: "beneficios_visualizar",
+        description: "Permission to read benefits",
+    },
+    // Membership permissions
+    {
+        name: "associados_criar",
+        description: "Permission to create membership",
+    },
+    {
+        name: "associados_editar",
+        description: "Permission to update membership",
+    },
+    {
+        name: "associados_deletar",
+        description: "Permission to delete membership",
+    },
+    {
+        name: "associados_visualizar",
+        description: "Permission to read membership",
+    },
+    // Union member permissions
+    { name: "filiados_cadastrar", description: "Cadastrar novo filiado" },
+    {
+        name: "filiado_visualizar_carteirinha",
+        description: "Visualizar carteirinha do filiado",
+    },
+    {
+        name: "patrimonio_criar",
+        description: "Permission to create asset",
+    },
+    {
+        name: "patrimonio_deletar",
+        description: "Permission to delete asset",
+    },
+    {
+        name: "patrimonio_visualizar",
+        description: "Permission to read asset",
+    },
+    {
+        name: "patrimonio_editar",
+        description: "Permission to update asset",
+    },
+    {
+        name: "sindicalizado_visualizar_status",
+        description: "Verificar status sindicalizado",
+    },
+];
 
-        { name: "perfis_criar", description: "Permission to create profiles" },
-        { name: "perfis_editar", description: "Permission to update profiles" },
-        {
-            name: "perfis_deletar",
-            description: "Permission to delete profiles",
-        },
-        {
-            name: "perfis_visualizar",
-            description: "Permission to read profiles",
-        },
+const defaultUsers = [
+    {
+        name: "Admin",
+        email: "admin@admin.com",
+        phone: "1234567890",
+        status: true,
+        situation: "OK",
+        password: "senha",
+        roleName: "administrador",
+        isProtected: true,
+    },
+    {
+        name: "User",
+        email: "user@user.com",
+        phone: "61981818181",
+        status: true,
+        password: "senha",
+        roleName: "Usuário",
+        isProtected: true,
+    },
+];
 
-        {
-            name: "orgaos_criar",
-            description: "Permission to create organizations",
-        },
-        {
-            name: "orgaos_editar",
-            description: "Permission to update organizations",
-        },
-        {
-            name: "orgaos_deletar",
-            description: "Permission to delete organizations",
-        },
-        {
-            name: "orgaos_visualizar",
-            description: "Permission to read organizations",
-        },
-
-        {
-            name: "fornecedores_criar",
-            description: "Permission to create suppliers",
-        },
-        {
-            name: "fornecedores_editar",
-            description: "Permission to update suppliers",
-        },
-        {
-            name: "fornecedores_deletar",
-            description: "Permission to delete suppliers",
-        },
-        {
-            name: "fornecedores_visualizar",
-            description: "Permission to read suppliers",
-        },
-
-        {
-            name: "contas_bancarias_criar",
-            description: "Permission to create bank accounts",
-        },
-        {
-            name: "contas_bancarias_editar",
-            description: "Permission to update bank accounts",
-        },
-        {
-            name: "contas_bancarias_deletar",
-            description: "Permission to delete bank accounts",
-        },
-        {
-            name: "contas_bancarias_visualizar",
-            description: "Permission to read bank accounts",
-        },
-
-        {
-            name: "movimentacao_financeira_criar",
-            description: "Permission to create financial transactions",
-        },
-        {
-            name: "patrimonio_criar",
-            description: "Permission to create asset",
-        },
-        {
-            name: "patrimonio_deletar",
-            description: "Permission to delete asset",
-        },
-        {
-            name: "patrimonio_visualizar",
-            description: "Permission to read asset",
-        },
-        {
-            name: "patrimonio_editar",
-            description: "Permission to update asset",
-        },
-        {
-            name: "movimentacao_financeira_editar",
-            description: "Permission to update financial transactions",
-        },
-        {
-            name: "movimentacao_financeira_deletar",
-            description: "Permission to delete financial transactions",
-        },
-        {
-            name: "movimentacao_financeira_visualizar",
-            description: "Permission to read financial transactions",
-        },
-
-        {
-            name: "permissoes_criar",
-            description: "Permission to create permissions",
-        },
-        {
-            name: "permissoes_editar",
-            description: "Permission to update permissions",
-        },
-        {
-            name: "permissoes_deletar",
-            description: "Permission to delete permissions",
-        },
-        {
-            name: "permissoes_visualizar",
-            description: "Permission to read permissions",
-        },
-
-        {
-            name: "beneficios_criar",
-            description: "Permission to create benefits",
-        },
-        {
-            name: "beneficios_editar",
-            description: "Permission to update benefits",
-        },
-        {
-            name: "beneficios_deletar",
-            description: "Permission to delete benefits",
-        },
-        {
-            name: "beneficios_visualizar",
-            description: "Permission to read benefits",
-        },
-        {
-            name: "associados_criar",
-            description: "Permission to create membership",
-        },
-        {
-            name: "associados_editar",
-            description: "Permission to update membership",
-        },
-        {
-            name: "associados_deletar",
-            description: "Permission to delete membership",
-        },
-        {
-            name: "associados_visualizar",
-            description: "Permission to read membership",
-        },
-
-        { name: "perfis_criar", description: "Permission to create roles" },
-        { name: "perfis_editar", description: "Permission to update roles" },
-        { name: "perfis_deletar", description: "Permission to delete roles" },
-        { name: "perfis_visualizar", description: "Permission to read roles" },
-        {
-            name: "permissoes_visualizar",
-            description: "Permission to search permissions",
-        },
-        {
-            name: "usuarios_visualizar_historico",
-            description: "Usuário visualiza historico",
-        },
-        {
-            name: "filiados_cadastrar",
-            description: "Cadastrar novo filiado",
-        },
-        {
-            name: "filiado_visualizar_carteirinha",
-            description: "Visualizar carteirinha do filiado",
-        },
-        {
-            name: "sindicalizado_visualizar_status",
-            description: "Verificar status sindicalizado",
-        },
-    ];
-
-    try {
-        for (const permission of permissions) {
-            const existingPermission = await Permission.findOne({
-                name: permission.name,
-            });
-            if (!existingPermission) {
-                const newPermission = new Permission(permission); // Directly save the permission object
-                await newPermission.save();
-                console.log(`Permission '${permission.name}' created.`);
-            } else {
-                console.log(`Permission '${permission.name}' already exists.`);
-            }
-        }
-
-        // Check if the Mongoose connection is open
-        if (mongoose.connection.readyState === 1) {
-            for (const role of roles) {
-                const existingRole = await Role.findOne({ name: role.name });
-                const permissions = await Permission.find();
-
-                if (!existingRole) {
-                    let permissionsData = [];
-                    if (role.name == "administrador") {
-                        permissionsData = permissions.map((x) => {
-                            return x._id;
-                        });
-                    } else {
-                        permissionsData = [];
-                    }
-                    const newRole = new Role({
-                        ...role,
-                        permissions: permissionsData,
-                    }); // Directly save the role object
-                    await newRole.save();
-                    console.log(`Role '${role.name}' created.`);
-                } else {
-                    console.log(`Role '${role.name}' already exists.`);
-                }
-            }
-        } else {
-            console.error("Mongoose connection is not open");
-        }
-    } catch (err) {
-        console.error("Error initializing permissions:", err);
+const checkMongooseConnection = () => {
+    if (mongoose.connection.readyState !== 1) {
+        throw new Error("Mongoose connection is not open");
     }
+};
 
+const createPermission = async (permission) => {
+    const existingPermission = await Permission.findOne({
+        name: permission.name,
+    });
+    if (!existingPermission) {
+        const newPermission = new Permission(permission);
+        await newPermission.save();
+    }
+};
+
+const createRole = async (role, allPermissions) => {
+    const existingRole = await Role.findOne({ name: role.name });
+    if (!existingRole) {
+        const permissionsData =
+            role.name === "administrador"
+                ? allPermissions.map((x) => x._id)
+                : [];
+        const newRole = new Role({ ...role, permissions: permissionsData });
+        await newRole.save();
+        return newRole;
+    } else {
+        return existingRole;
+    }
+};
+
+const createUser = async (userData, roleObj) => {
+    const existingUser = await User.findOne({ email: userData.email });
+    if (!existingUser) {
+        const hashedPassword = await bcrypt.hash(userData.password, salt);
+        const user = new User({
+            ...userData,
+            password: hashedPassword,
+            role: roleObj._id,
+        });
+        await user.save();
+    }
+};
+
+const initializeRoles = async () => {
     try {
-        // Verificar se a conexão está aberta antes de executar
-        if (mongoose.connection.readyState === 1) {
-            // Busca o user 'administrador'
-            const adminRole = await Role.findOne({ name: "administrador" });
-            if (!adminRole) {
-                console.error(
-                    'Role "administrador" não encontrada. Crie a role antes de adicionar o usuário administrador.'
-                );
-                return;
-            }
-            const userRole = await Role.findOne({ name: "Usuário" });
-            if (!userRole) {
-                console.error(
-                    'Role "Usuário" nao encontrada. Crie a role antes de acidionar o usuário'
-                );
-                return;
-            }
+        checkMongooseConnection();
 
-            // Verifica se o usuário administrador já existe
-            const existingAdmin = await User.findOne({
-                email: "admin@admin.com",
-            });
-            if (!existingAdmin) {
-                const hashedPassword = await bcrypt.hash("senha", salt); // Altere a senha padrão conforme necessário
+        // Initialize permissions
+        await Promise.all(
+            permissions.map((permission) => createPermission(permission))
+        );
 
-                // Cria o usuário administrador
-                const adminUser = new User({
-                    name: "Admin",
-                    email: "admin@admin.com",
-                    phone: "1234567890",
-                    status: true,
-                    situation: "OK",
-                    password: hashedPassword,
-                    role: adminRole._id,
-                    isProtected: true,
-                });
-
-                await adminUser.save();
-                console.log("Usuário administrador criado com sucesso.");
-            } else {
-                console.log("Usuário administrador já existe.");
-            }
-
-            const ExistingSindicalizado = await User.findOne({
-                email: "user@user.com",
-            });
-            if (!ExistingSindicalizado) {
-                const hashedPassword = await bcrypt.hash("senha", salt); // Altere a senha padrão conforme necessário
-
-                // Cria o usuário administrador
-                const sindUser = new User({
-                    name: "User",
-                    email: "user@user.com",
-                    phone: "61981818181",
-                    status: true,
-                    password: hashedPassword,
-                    role: userRole,
-                    isProtected: true,
-                });
-
-                await sindUser.save();
-                console.log("Usuário sindicalizado criado com sucesso.");
-            } else {
-                console.log("Usuário sindicalizado já existe.");
-            }
-        } else {
-            console.error("Mongoose connection is not open");
+        // Initialize roles
+        const allPermissions = await Permission.find();
+        const createdRoles = {};
+        for (const role of roles) {
+            createdRoles[role.name] = await createRole(role, allPermissions);
         }
-    } catch (err) {
-        console.error("Error initializing admin user:", err);
+
+        // Initialize users
+        await Promise.all(
+            defaultUsers.map((userData) =>
+                createUser(userData, createdRoles[userData.roleName])
+            )
+        );
+    } catch (error) {
+        console.error("Initialization error:", error);
     }
 };
 
