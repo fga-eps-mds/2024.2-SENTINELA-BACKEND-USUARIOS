@@ -217,7 +217,7 @@ const Membership = User.discriminator(
         beneficio: {
             type: String,
             default: "",
-        }
+        },
     })
 );
 
