@@ -148,6 +148,22 @@ const permissions = [
         description: "Visualizar carteirinha do filiado",
     },
     {
+        name: "patrimonio_criar",
+        description: "Permission to create asset",
+    },
+    {
+        name: "patrimonio_deletar",
+        description: "Permission to delete asset",
+    },
+    {
+        name: "patrimonio_visualizar",
+        description: "Permission to read asset",
+    },
+    {
+        name: "patrimonio_editar",
+        description: "Permission to update asset",
+    },
+    {
         name: "sindicalizado_visualizar_status",
         description: "Verificar status sindicalizado",
     },
