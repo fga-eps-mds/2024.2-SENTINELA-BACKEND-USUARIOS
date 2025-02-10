@@ -214,6 +214,10 @@ const Membership = User.discriminator(
             type: Date,
             default: Date.now,
         },
+        beneficio: {
+            type: String,
+            default: "",
+        },
     })
 );
 
